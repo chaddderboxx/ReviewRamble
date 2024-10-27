@@ -1,0 +1,55 @@
+
+/* 
+    Created on : Oct 26, 2024, 9:20:32 PM
+    Author     : pedro
+*/
+*{
+margin: 0;
+padding: 0;
+font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+background: #FFF4E6;
+color: #215E99;
+}
+/************************ TOP Area *****************************/
+header {
+    width:100%;
+    background-color: #156082;
+    display: flex;
+    position: fixed;
+    color: #A6CAEC;
+}
+.TopTitle {
+    margin-left: 15%;
+}
+.container {
+    width:100%;
+}
+leftS {
+    float: left; 
+    width: 50%;
+}
+
+
+.logo {
+margin-top: 10%;
+width: 60%;
+margin-left: 5%;
+}
+
+righS {
+    float: right; 
+    width: 50%;
+    margin-top: 150px;
+}
+
+.button1 {
+    background-color: #156082;
+    color: white;
+    width: 120px;
+    height:50px;
+    border-radius: 25px;
+    
+}

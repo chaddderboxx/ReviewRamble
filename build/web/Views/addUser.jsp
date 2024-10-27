@@ -17,30 +17,40 @@
            
      
     <body>
-        <div class="index">
-            <h1> New User </h1><br><br>
-            <form action="Login" method ="post">
-                <label >Username &emsp;&emsp;&emsp;</label>
-                <input type="text" name="username" required><br>
-                <br>
-                <label >Password &emsp;&emsp;&emsp;&nbsp;</label>
-                <input type="password" name="password1" required><br>
-                <br>
-                <label >Repeat Password</label>
-                <input type="password" name="password2" required><br>
-                <br>
-                <input type="hidden" name="action" value="createUser" />
-                <input type="submit" value="Newuser" class="margin_left">
-
-            </form>
-            <br>
-            <h6><c:out value= "${message}" /></h6>
-            <br>
-        
-            <footer>
-             <c:import url="/Views/footer.jsp"/> 
-            </footer> 
+        <div>
+            <header>
+                <h1 class="TopTitle">Review Ramble</h1>
+            </header>
         </div>
+            <container> 
+                <leftS>
+                    <img src="images/GroupIcon.jpg" class="logo" alt="RambleLogo"/>
+                </leftS>
+                <righS>
+                    <h1> New User </h1><br><br>
+                    <form action="Login" method ="post">
+                        <label >Username &emsp;&emsp;&emsp;</label>
+                        <input type="text" name="username" required><br>
+                        <br>
+                        <label >Password &emsp;&emsp;&emsp;&nbsp;</label>
+                        <input type="password" name="password1" required><br>
+                        <br>
+                        <label >Repeat Password</label>
+                        <input type="password" name="password2" required><br>
+                        <br>
+                        <input type="hidden" name="action" value="createUser" />
+                        <input type="submit" class="button1" value="New User" class="margin_left">
+
+                    </form>
+                    <br>
+                    <h6><c:out value= "${message}" /></h6>
+                    <br>
+                    <footer>
+                     <c:import url="/Views/footer.jsp"/> 
+                    </footer> 
+                </righS>
+            </container>
+    
     </body>
 </html>
 

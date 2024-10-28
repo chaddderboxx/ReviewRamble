@@ -9,13 +9,10 @@ int currentYear = currentDate.get(Calendar.YEAR);
 <footer>
      
     <p>
-         <nav> 
-            <a href="index.html">Back</a>
-        </nav>  
+        <br> 
         <br>
-        
         &copy;<%= currentYear %>
-    <%= "Bad Twitter Clone" %>
+    <%= "RRambleInc" %>
     </p>
 </footer>
 </body>

@@ -42,7 +42,7 @@ margin-left: 5%;
 righS {
     float: right; 
     width: 50%;
-    margin-top: 150px;
+    margin-top: 140px;
 }
 
 .button1 {
@@ -52,4 +52,10 @@ righS {
     height:50px;
     border-radius: 25px;
     
+}
+
+footer {
+   position: fixed; 
+   margin-left: 5%;
+   margin-top: 40%;
 }

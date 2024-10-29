@@ -1,8 +1,4 @@
-<%-- 
-    Document   : contact
-    Created on : Oct 27, 2024, 8:03:44 PM
-    Author     : pedro
---%>
+
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -11,7 +7,9 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
     </head>
+    <c:import url="/Views/header.jsp"/>
     <body>
         <h1>Hello World!</h1>
     </body>
+    <c:import url="/Views/footer.jsp"/>
 </html>

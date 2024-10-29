@@ -1,3 +1,5 @@
+package RReview;
+
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Servlet.java to edit this template
@@ -23,7 +25,7 @@ public class SignIn extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         
         String option = request.getParameter("option");
-        if(option.equalsIgnoreCase("Sign In")){
+        if(option.equalsIgnoreCase("Login")){
             RequestDispatcher RequetsDispatcherObj =request.getRequestDispatcher("/Views/autent.jsp");
             RequetsDispatcherObj.forward(request, response);
         }

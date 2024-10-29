@@ -12,6 +12,9 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <h1>Hello World!</h1>
+        <h1>Main Page!</h1>
+        
+        <a href="Views/about.jsp"> About </a> <br>
+        <a href="Views/profile.jsp"> Profile </a>
     </body>
 </html>

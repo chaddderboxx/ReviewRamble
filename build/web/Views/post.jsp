@@ -1,4 +1,8 @@
-
+<%-- 
+    Document   : post
+    Created on : Oct 29, 2024, 9:30:12 PM
+    Author     : pedro
+--%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -8,10 +12,8 @@
         <link rel="stylesheet" href="main.css" media="screen">
         <title>JSP Page</title>
     </head>
-    <c:import url="/Views/header.jsp"/>
     <body>
-        <h1>Contact!</h1>
+        <h1>Post!</h1>
+        <a href="DirectPage?option=Main">Back</a><br>
     </body>
-    <a href="DirectPage?option=Main">Back</a><br>
-    <c:import url="/Views/footer.jsp"/>
 </html>

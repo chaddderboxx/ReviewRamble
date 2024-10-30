@@ -53,6 +53,9 @@ righS {
     border-radius: 25px;
     
 }
+.button1:hover {
+    background-color: blue;
+}
 
 footer {
    position: fixed; 

@@ -16,6 +16,26 @@
         <servlet-name>Ramble</servlet-name>
         <servlet-class>RReview.Ramble</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>DirectPage</servlet-name>
+        <servlet-class>RReview.DirectPage</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>Shoe</servlet-name>
+        <servlet-class>RReview.Shoe</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>GetImage</servlet-name>
+        <servlet-class>RReview.GetImage</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>Upload</servlet-name>
+        <servlet-class>RReview.Upload</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>Profile</servlet-name>
+        <servlet-class>RReview.Profile</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>Login</servlet-name>
         <url-pattern>/Login</url-pattern>
@@ -31,6 +51,26 @@
     <servlet-mapping>
         <servlet-name>Ramble</servlet-name>
         <url-pattern>/Ramble</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>DirectPage</servlet-name>
+        <url-pattern>/DirectPage</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Shoe</servlet-name>
+        <url-pattern>/Shoe</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>GetImage</servlet-name>
+        <url-pattern>/GetImage</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Upload</servlet-name>
+        <url-pattern>/Upload</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Profile</servlet-name>
+        <url-pattern>/Profile</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

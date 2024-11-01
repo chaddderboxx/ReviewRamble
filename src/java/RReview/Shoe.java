@@ -13,9 +13,9 @@ public class Shoe {
     private String image;
     private Timestamp timestamp;
     private String  filename;
-    private int rating;
+    private double rating;
 
-    public Shoe(int id, String brand, String sColor,String type,String image, Timestamp timestamp, String filename, int rating) {
+    public Shoe(int id, String brand, String sColor,String type,String image, Timestamp timestamp, String filename, double rating) {
         this.id = id;
         this.brand = brand;
         this.sColor = sColor;
@@ -48,7 +48,7 @@ public class Shoe {
     public String getFilename() {
         return filename;
     }
-    public int getRating() {
+    public double getRating() {
         return rating;
     }
         

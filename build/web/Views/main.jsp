@@ -25,8 +25,9 @@
         <a href="DirectPage?option=Post">Post</a><br> 
         <a href="DirectPage?option=Contact">Contact</a><br>
         <a href="DirectPage?option=Profile">Profile</a><br>
+        <a href="SignOut">Sign Out</a><br>
         <br><!-- comment -->
-        <c:import url="/Views/footer.jsp"/>
         
+        <c:import url="/Views/footer.jsp"/> 
     </body>
 </html>

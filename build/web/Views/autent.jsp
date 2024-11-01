@@ -41,8 +41,8 @@
                     <input type="submit" class="button1" value="Login" class="margin_left">
                 </form>
                 <br>
-                <h6><c:out value= "${message}" /></h6>
-                <br>
+                <errorMes><c:out value= "${message}" /></<errorMes>
+                        <br><br>
                 <a href="index.html">Back</a>
             </righS>
         </container>        

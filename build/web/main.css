@@ -62,3 +62,7 @@ footer {
    margin-left: 5%;
    margin-top: 40%;
 }
+
+errorMes {
+    color: red;
+}

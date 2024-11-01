@@ -8,7 +8,8 @@
         <title>Profile</title>
     </head>
     <body>
-        <h2>Welcome ${username}!</h2>
+        <h2>Welcome ${username}!</h2><br>
+        
         <c:if test="${(filename != null)}">
             <img src="GetImage?username=${username}" width="240" height="300"/>
         </c:if>

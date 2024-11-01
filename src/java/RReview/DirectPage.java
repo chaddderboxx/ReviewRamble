@@ -22,6 +22,18 @@ public class DirectPage extends HttpServlet {
             RequestDispatcher RequetsDispatcherObj =request.getRequestDispatcher("/Views/about.jsp");
             RequetsDispatcherObj.forward(request, response);
         }
+        if(option.equalsIgnoreCase("MyReview")){
+            RequestDispatcher RequetsDispatcherObj =request.getRequestDispatcher("/Views/myReviews.jsp");
+            RequetsDispatcherObj.forward(request, response);
+        }
+         if(option.equalsIgnoreCase("Search")){
+            RequestDispatcher RequetsDispatcherObj =request.getRequestDispatcher("/Views/search.jsp");
+            RequetsDispatcherObj.forward(request, response);
+        }
+         if(option.equalsIgnoreCase("AddShoe")){
+            RequestDispatcher RequetsDispatcherObj =request.getRequestDispatcher("/Views/addShoe.jsp");
+            RequetsDispatcherObj.forward(request, response);
+        }
         if(option.equalsIgnoreCase("Post")){
             RequestDispatcher RequetsDispatcherObj =request.getRequestDispatcher("/Views/post.jsp");
             RequetsDispatcherObj.forward(request, response);
@@ -31,7 +43,7 @@ public class DirectPage extends HttpServlet {
             RequetsDispatcherObj.forward(request, response);
         }
         if(option.equalsIgnoreCase("Profile")){
-            RequestDispatcher RequetsDispatcherObj =request.getRequestDispatcher("/Views/profile.jsp");
+            RequestDispatcher RequetsDispatcherObj =request.getRequestDispatcher("Profile");
             RequetsDispatcherObj.forward(request, response);
         }
         if(option.equalsIgnoreCase("Main")){

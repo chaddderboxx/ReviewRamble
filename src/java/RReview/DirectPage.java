@@ -34,10 +34,6 @@ public class DirectPage extends HttpServlet {
             RequestDispatcher RequetsDispatcherObj =request.getRequestDispatcher("/Views/addShoe.jsp");
             RequetsDispatcherObj.forward(request, response);
         }
-        if(option.equalsIgnoreCase("Post")){
-            RequestDispatcher RequetsDispatcherObj =request.getRequestDispatcher("/Views/post.jsp");
-            RequetsDispatcherObj.forward(request, response);
-        }
         if(option.equalsIgnoreCase("Contact")){
             RequestDispatcher RequetsDispatcherObj =request.getRequestDispatcher("/Views/contact.jsp");
             RequetsDispatcherObj.forward(request, response);

@@ -67,13 +67,46 @@ errorMes {
     color: red;
 }
 .popup {
-  display: none;
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background-color: white;
-  padding: 20px;
-  border-radius: 5px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+.stars {
+    display: flex;
+    flex-direction: row;
+}
+.star {
+    font-size: 3rem;
+    color: #ccc; /* Default color */
+    cursor: pointer;
+}
+.star.filled {
+    color: #f39c12; /* Filled star color */
+}
+.readonly {
+    color: #215E99;
+    background: transparent;
+    border: none;
+    width: 55px;
+    font-size: 1rem;
+    padding-left: 20px;
+    
+    
+}
+ratMax {
+    margin-top: 23px;
+    margin-left: -43px;
+    font-size: 1rem;
+    
+}
+.shoeimage {
+    border-radius: 25px;
+    width: 340px;
+    height: auto;
 }

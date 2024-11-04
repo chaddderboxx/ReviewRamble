@@ -1,65 +1,66 @@
-
 package RReview;
 
 import java.awt.image.BufferedImage;
 import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.sql.Connection;
+import java.sql.DriverManager;
 import java.sql.Statement;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import javax.servlet.http.HttpSession;
 
 public class ShoeModel {
-    
-    public static ArrayList<Shoe> getShoe(){
+
+    public static ArrayList<Shoe> getShoe() {
         ArrayList<Shoe> shoes = new ArrayList<>();
-        try{
+        try {
             Connection connection = DatabaseConnection.getConnection();
-            Statement statement= connection.createStatement();
-            ResultSet results=statement.executeQuery("select * from shoe");
-            while(results.next()){
-                int id=results.getInt("id");
+            Statement statement = connection.createStatement();
+            ResultSet results = statement.executeQuery("select * from shoe");
+            while (results.next()) {
+                int id = results.getInt("id");
                 String brand = results.getString("brand");
                 String sColor = results.getString("sColor");
                 String type = results.getString("type");
-                String  image = results.getString("image");
+                String image = results.getString("image");
                 Timestamp timestamp = results.getTimestamp("timestamp");
                 String filename = results.getString("filename");
-                double rating =results.getDouble("rating");
-                
-                Shoe shoe = new Shoe(id,brand,sColor,type,image,timestamp, filename, rating);
+                double rating = results.getDouble("rating");
+
+                Shoe shoe = new Shoe(id, brand, sColor, type, image, timestamp, filename, rating);
                 shoes.add(shoe);
             }
             results.close();
             statement.close();
             connection.close();
-        } catch(Exception ex) {
+        } catch (Exception ex) {
             System.out.println(ex);
         }
         return shoes;
     }
-       public static void addShoe(Shoe shoe){
-       try{
-           Connection connection = DatabaseConnection.getConnection();
-           
-           String query="INSERT INTO shoe(brand,sColor,type,image,filename)"
-                    +" VALUES(?,?,?,?,?)";
-           PreparedStatement statement= connection.prepareStatement(query);
-           
-           statement.setString(1,shoe.getBrand()) ;
-           statement.setString(2, shoe.getsColor());
-           statement.setString(3, shoe.getsType());
-           statement.setString(4, shoe.getImage());
-           statement.setString(5, shoe.getFilename());
-           
-           statement.execute();
-           
-           statement.close();
-           connection.close();
-       } catch(Exception ex){
-           System.out.println(ex);
-       }
+
+    public static void addShoe(Shoe shoe) {
+        try {
+            Connection connection = DatabaseConnection.getConnection();
+
+            String query = "INSERT INTO shoe(brand,sColor,type,image,filename)"
+                    + " VALUES(?,?,?,?,?)";
+            PreparedStatement statement = connection.prepareStatement(query);
+
+            statement.setString(1, shoe.getBrand());
+            statement.setString(2, shoe.getsColor());
+            statement.setString(3, shoe.getsType());
+            statement.setString(4, shoe.getImage());
+            statement.setString(5, shoe.getFilename());
+
+            statement.execute();
+            
+            statement.close();
+            connection.close();
+        } catch (Exception ex) {
+            System.out.println(ex);
+        }
     }
     /*   
     public static ArrayList<TweetExtra> getTweetsNusers(){
@@ -180,5 +181,5 @@ public class ShoeModel {
         }
         return tweetsE;
     }
-*/
+     */
 }

@@ -23,7 +23,7 @@
         <a href="DirectPage?option=MyReview">My Reviews</a><br>
         <a href="Search">Search</a><br>
         
-        <a href="DirectPage?option=Post">Post</a><br> 
+         
         <a href="#" id="post">Post Comment and Rating</a><br>
         <a href="DirectPage?option=Contact">Contact</a><br>
         <a href="DirectPage?option=Profile">Profile</a><br>

@@ -6,9 +6,7 @@ function start() {
     
 }
 function loadImg(){
-    //event.preventDefault();
-    //let theImage=document.querySelector('#img');
-    //theImage.setAttribute('src','images/nike.gif');
+
     const file = event.target.files[0];
             if (file) {
                 const reader = new FileReader();

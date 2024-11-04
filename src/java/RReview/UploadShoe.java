@@ -6,6 +6,8 @@ import java.io.InputStream;
 import java.io.PrintWriter;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.Statement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -42,7 +44,8 @@ public class UploadShoe extends HttpServlet {
         String brand= request.getParameter("brand");
         String sColor= request.getParameter("sColor");
         String type = request.getParameter("type");
-        
+        String rating = request.getParameter("rating");
+        String comment = request.getParameter("comment");
         
         try{
             HttpSession session = request.getSession();
@@ -52,7 +55,7 @@ public class UploadShoe extends HttpServlet {
             
             String preparedSQL ="INSERT INTO shoe(brand,sColor, type, image, filename)"
                     +" VALUES(?,?,?,?,?)";
-           PreparedStatement preparedStatement = connection.prepareStatement(preparedSQL);
+           PreparedStatement preparedStatement = connection.prepareStatement(preparedSQL, Statement.RETURN_GENERATED_KEYS);
            
            preparedStatement.setString(1,brand) ;
            preparedStatement.setString(2,sColor) ;
@@ -61,8 +64,22 @@ public class UploadShoe extends HttpServlet {
            preparedStatement.setString(5, fileName);
             
             
-            preparedStatement.executeUpdate();
+            int affectedRows = preparedStatement.executeUpdate();
+             
+            
+            //////////////////////////////////
+            long id=0;
+            if (affectedRows > 0) {
+                ResultSet generatedKeys = preparedStatement.getGeneratedKeys();
+                if (generatedKeys.next()) {
+                    id = generatedKeys.getLong(1);
+                    
+                }
+            }
 
+            //////////////////////////////////
+            
+            
             preparedStatement.close();
             
             connection.close();

@@ -14,6 +14,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="stylesheet" href="main.css" media="screen">
         <script src="scripts/main.js"></script>
+        <script src="scripts/apiData.js"></script>
         <title>Main Ramble Page</title>
     </head>
     <body>
@@ -35,6 +36,7 @@
             <button id="existShoe">Existing Shoe</button>
             <button id="closePopUp">Close</button>
         </div>
+        
     <c:import url="/Views/footer.jsp"/> 
 </body>
 </html>

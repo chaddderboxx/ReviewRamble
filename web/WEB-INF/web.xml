@@ -56,6 +56,10 @@
         <servlet-name>GetImageSh</servlet-name>
         <servlet-class>RReview.GetImageSh</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>sendShInfo</servlet-name>
+        <servlet-class>RReview.sendShInfo</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>Login</servlet-name>
         <url-pattern>/Login</url-pattern>
@@ -111,6 +115,10 @@
     <servlet-mapping>
         <servlet-name>GetImageSh</servlet-name>
         <url-pattern>/GetImageSh</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>sendShInfo</servlet-name>
+        <url-pattern>/sendShInfo</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

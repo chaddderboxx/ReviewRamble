@@ -56,6 +56,14 @@ righS {
 .button1:hover {
     background-color: blue;
 }
+.button2 {
+    background-color: #156082;
+    color: white;
+    width: 120px;
+    height:20px;
+    border-radius: 5px;
+
+}
 
 footer {
     position: fixed;
@@ -109,4 +117,34 @@ ratMax {
     border-radius: 25px;
     width: 340px;
     height: auto;
+}
+.searchImage {
+    border-radius: 10px;
+    width: 140px;
+    height: auto;
+}
+table.searchTable {
+  border-collapse: separate;
+  border-spacing: 10px;
+  *border-collapse: expression('separate', cellSpacing='10px');
+    
+}
+table.searchTable td {
+    width:300px;
+    padding: 20px;
+    background-color: peachpuff;
+}
+Label {
+    /* Other styling... */
+    text-align: right;
+    clear: both;
+    float:left;
+    margin-right:15px;
+}
+.noManInput {
+    background-color: transparent;
+    border: none;
+    color: #215E99;
+    pointer-events: none;
+    font-size: medium;
 }

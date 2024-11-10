@@ -1,0 +1,159 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/CascadeStyleSheet.css to edit this template
+*/
+/* 
+    Created on : Nov 10, 2024, 6:08:28 PM
+    Author     : chada
+*/
+
+/* General styling */
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    background: #FFF4E6;
+    color: #215E99;
+}
+
+/* Main container for left and right columns */
+.page-container {
+    display: flex;
+    gap: 20px;
+    max-width: 1200px; /* Adjust as needed */
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Left Link List (left sidebar) */
+.left-links {
+    width: 25%; /* Adjust the width of the left sidebar */
+    background-color: #156082;
+    padding: 15px;
+    border-right: 2px solid #ccc;
+}
+
+.left-links h2 {
+    font-size: 1.2em;
+    color: #A6CAEC;
+    margin-bottom: 10px;
+}
+
+.left-links a {
+    display: block;
+    color: #ffffff;
+    text-decoration: none;
+    padding: 8px 0;
+    font-size: 1em;
+}
+
+.left-links img {
+    width: 45px;
+    height: 45px;
+}
+
+.left-links a:hover {
+    color: #f39c12;
+}
+
+/* Logo Styling (above left links) */
+.logo {
+    width: 100%;
+    max-width: 150px;
+    margin-bottom: 20px;
+}
+
+.logo-container img {
+    width: 100%;
+    max-width: 150px; /* Keeps the logo's original size */
+    height: auto;
+}
+
+/* Right column container (content area) */
+.right-column {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    background-color: #ffffff;
+    color: #156082;
+    padding: 15px;
+}
+
+/* Individual content block styling within the right column */
+.content-block {
+    padding: 15px;
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.content-block h3 {
+    color: #156082;
+    margin-bottom: 10px;
+    font-size: 1.3em;
+}
+
+/* Limit image size */
+.content-image {
+    width: 100%;
+    max-width: 400px; /* Limit image width to 600px */
+    height: auto;
+    margin: 10px 0;
+}
+
+/* Read More link styling */
+.read-more {
+    display: inline-block;
+    margin-top: 10px;
+    color: #156082;
+    text-decoration: none;
+}
+
+.read-more:hover {
+    color: #f39c12;
+}
+
+/* Major Players list styling */
+.brand-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 10px 0;
+}
+
+.brand-list li a {
+    display: block;
+    color: #156082;
+    text-decoration: none;
+    padding: 5px 0;
+}
+
+.brand-list li a:hover {
+    color: #f39c12;
+}
+
+/* Online Stores two-column list styling */
+.store-columns {
+    display: flex;
+    justify-content: space-around;
+}
+
+.store-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.store-list li a {
+    display: block;
+    color: #156082;
+    text-decoration: none;
+    padding: 5px 0;
+}
+
+.store-list li a:hover {
+    color: #f39c12;
+}

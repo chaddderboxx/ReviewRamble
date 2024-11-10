@@ -217,7 +217,7 @@ Label {
 
 /* Ensure the text in the Home link matches the icon size */
 .left-links a.home-link {
-    font-size: 50px; /* Matches the height of the icon */
+    font-size: 30px; /* Matches the height of the icon */
     color: #ffffff;
     text-decoration: none;
 }

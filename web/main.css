@@ -148,3 +148,65 @@ Label {
     pointer-events: none;
     font-size: medium;
 }
+
+/************************ Main styling *****************************/
+
+/* Container for the left and right link sections */
+.page-container {
+    display: flex;
+    gap: 20px; /* Space between the left-links and main-content */
+    padding: 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+/* Styling for Left Link List (left sidebar) */
+.left-links {
+    width: 25%;
+    background-color: #f0f4f8; /* Light background for contrast */
+    padding: 15px;
+    border-right: 2px solid #ccc;
+}
+
+.left-links h2 {
+    font-size: 1.2em;
+    color: #156082;
+    margin-bottom: 10px;
+}
+
+.left-links a {
+    display: block;
+    color: #156082;
+    text-decoration: none;
+    padding: 8px 0;
+    font-size: 1em;
+}
+
+.left-links a:hover {
+    color: #215E99;
+}
+
+/* Styling for Main Content Link Section (center-right of the page) */
+.main-content {
+    width: 70%;
+    padding: 15px;
+    background-color: #ffffff; /* Background for visual separation */
+}
+
+.main-content h2 {
+    font-size: 1.4em;
+    color: #156082;
+    margin-bottom: 10px;
+}
+
+.main-content a {
+    display: block;
+    color: #156082;
+    text-decoration: none;
+    padding: 8px 0;
+    font-size: 1.1em;
+}
+
+.main-content a:hover {
+    color: #215E99;
+}

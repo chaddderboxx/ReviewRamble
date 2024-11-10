@@ -209,12 +209,20 @@ Label {
 
 /* Home icon styling */
 .home-icon {
-    width: 50px; /* Adjust size as needed */
-    height: 50px;
+    width: 24px; /* Adjust size as needed */
+    height: 24px;
     vertical-align: middle;
     margin-right: 8px; /* Space between the icon and the text */
 }
 
-.main-content a:hover {
-    color: #white;
+/* Ensure the text in the Home link matches the icon size */
+.left-links a.home-link {
+    font-size: 24px; /* Matches the height of the icon */
+    color: #ffffff;
+    text-decoration: none;
+}
+
+/* Hover effect for Home link specifically */
+.left-links a.home-link:hover {
+    color: white;
 }

@@ -163,7 +163,7 @@ Label {
 /* Styling for Left Link List (left sidebar) */
 .left-links {
     width: 25%;
-    background-color: #f0f4f8; /* Light background for contrast */
+    background-color: #156082; /* Light background for contrast */
     padding: 15px;
     border-right: 2px solid #ccc;
 }
@@ -176,7 +176,7 @@ Label {
 
 .left-links a {
     display: block;
-    color: #156082;
+    color: #ffffff;
     text-decoration: none;
     padding: 8px 0;
     font-size: 1em;

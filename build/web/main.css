@@ -209,15 +209,15 @@ Label {
 
 /* Home icon styling */
 .home-icon {
-    width: 24px; /* Adjust size as needed */
-    height: 24px;
+    width: 50px; /* Adjust size as needed */
+    height: 50px;
     vertical-align: middle;
     margin-right: 8px; /* Space between the icon and the text */
 }
 
 /* Ensure the text in the Home link matches the icon size */
 .left-links a.home-link {
-    font-size: 24px; /* Matches the height of the icon */
+    font-size: 50px; /* Matches the height of the icon */
     color: #ffffff;
     text-decoration: none;
 }

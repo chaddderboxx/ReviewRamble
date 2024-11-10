@@ -209,8 +209,8 @@ Label {
 
 /* Home icon styling */
 .home-icon {
-    width: 20px; /* Adjust size as needed */
-    height: 20px;
+    width: 50px; /* Adjust size as needed */
+    height: 50px;
     vertical-align: middle;
     margin-right: 8px; /* Space between the icon and the text */
 }

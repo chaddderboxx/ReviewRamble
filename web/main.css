@@ -207,6 +207,14 @@ Label {
     font-size: 1.1em;
 }
 
+/* Home icon styling */
+.home-icon {
+    width: 20px; /* Adjust size as needed */
+    height: 20px;
+    vertical-align: middle;
+    margin-right: 8px; /* Space between the icon and the text */
+}
+
 .main-content a:hover {
     color: #215E99;
 }

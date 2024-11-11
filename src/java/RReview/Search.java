@@ -19,7 +19,7 @@ public class Search extends HttpServlet {
         try {
             ArrayList<Shoe> shoes = ShoeModel.getShoe();
             request.setAttribute("shoes",shoes);
-            String url = "/Views/search2.jsp";  
+            String url = "/Views/search3.jsp";  
             getServletContext().getRequestDispatcher(url).forward(request,response);
         }catch(Exception ex){
             exceptionPage(ex, request, response);

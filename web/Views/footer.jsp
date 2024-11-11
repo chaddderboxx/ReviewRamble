@@ -4,10 +4,23 @@
 GregorianCalendar currentDate= new GregorianCalendar();
 int currentYear = currentDate.get(Calendar.YEAR);
 %>
-
+<footer class="footer-content">
+    <div class="footer-container">
+        <div class="footer-column">
+            <h3>Content Links</h3>
+            <a href="#">Rate a Shoe</a>
+            <a href="#">Review Gallery</a>
+            <a href="#">Top Rated Shoes</a>
+            <a href="#">New Arrivals</a>
+        </div>
+        <div class="footer-column center-column">
+            <p>Made with love at OCC</p>
+        </div>
+        <div class="footer-column">
+            <img src="images/OCCOwls.gif" alt="OCC Owls" class="owl-image">
+        </div>
+    </div>
     
-<footer>
-     
     <p>
         <br> 
         <br>
@@ -15,5 +28,4 @@ int currentYear = currentDate.get(Calendar.YEAR);
     <%= "RRambleInc" %>
     </p>
 </footer>
-</body>
-</html>
+

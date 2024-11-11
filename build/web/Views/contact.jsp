@@ -1,15 +1,19 @@
 
-
+<%@ page import="java.io.*"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html>
+<html lang="en">
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="stylesheet" href="main.css" media="screen">
+        <link rel="stylesheet" type="text/css" href="Footer.css">
         <title>Contact Page</title>
     </head>
     <c:import url="/Views/header.jsp"/>
     <body>
+        <br><!-- comment -->
+        <br>
         <h1>Contact!</h1>
         <form action="Contact" method ="post">
                     <label >Name &emsp;&emsp;&emsp;</label>

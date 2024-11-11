@@ -21,23 +21,24 @@
             <label>Page:<input  id='pageN' type="search" name="p" accesskey="s 0" value="1"></label>
         </form><br>
         
+        
         <table class="searchTable">
             <tr>
                 <td >
                     <form action="sendShInfo" method ="post">    
                         <Label>Brand: </label><input class="noManInput" type="text" name="brand" id="output1">
                         <img class="searchImage" id="sImg1" name="image" src="" alt="shoe image1"><br>
-                        <Label>Color: </label><div id="color1" name="colorS">Text</div>
-                        <Label>Name: </label><div id="name1" name="nameS">Text</div>
-                        <Label>SKU: </label><div id="sku1" name="sku">Text</div>
+                        <Label>Color:</label><input class="noManInput" type="text" id="color1" name="colorS">
+                        <Label>Name:</label><input class="noManInput" type="text" id="name1" name="nameS">
+                        <Label>SKU:</label><input class="noManInput" type="text" id="sku1" name="sku">
                         <input type="submit" class='button2'value='Rate'>
                     </form>
                 </td>
                 <td >
                     <Label>Brand: </label><input type="text" name="brand" id="output2">
                     <img class="searchImage" id="sImg2" src="" alt="shoe image2"><br>
-                    <Label>Color: </label><div id="color2" name="color2">Text</div>
-                    <Label>Name: </label><div id="name2">Text</div>
+                    <Label>Color: </label><input type="text" id="color2" name="color2">
+                    <Label>Name: </label><input type="text" id="name2" name="name2">
                     <Label>SKU: </label><div id="sku2">Text</div>
                     <button class='button2'>Rate</button>
                 </td>

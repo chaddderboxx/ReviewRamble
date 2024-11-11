@@ -1,0 +1,61 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/CascadeStyleSheet.css to edit this template
+*/
+/* 
+    Created on : Nov 10, 2024, 6:28:35 PM
+    Author     : chada
+*/
+
+
+/* Footer styling */
+footer {
+    background-color: #156082;
+    color: #ffffff;
+    width: 100%;
+    padding: 20px;
+    margin-top: 20px;
+    text-align: center;
+}
+
+footer a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+footer a:hover {
+    color: #f39c12;
+}
+
+.footer-column .owl-image {
+    max-width: 100px; /* Adjust this size as needed */
+    height: auto;
+    margin-top: 0; /* Ensure it’s flush with the top of the column */
+}
+
+/* New container for footer columns */
+.footer-container {
+    display: flex;
+    justify-content: space-around;
+    max-width: 1200px; /* Adjust width as needed */
+    margin: 0 auto; /* Center the footer container */
+}
+
+/* Footer columns */
+.footer-column {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center content horizontally */
+    justify-content: flex-start; /* Align content to the top */
+    text-align: center;
+}
+
+.footer-column h3 {
+    margin-bottom: 10px;
+}
+
+.footer-column p,
+.footer-column a {
+    color: #ffffff;
+    margin: 5px 0;
+}

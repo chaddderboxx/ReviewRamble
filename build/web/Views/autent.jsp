@@ -9,7 +9,7 @@
 
 
 <!DOCTYPE html>
-<html>
+<html lang="en">
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="stylesheet" href="main.css" media="screen">
@@ -46,7 +46,7 @@
                 <a href="index.html">Back</a>
             </righS>
         </container>        
-        <c:import url="/Views/footer.jsp"/>
+        
     </body>
 
 </html>

@@ -20,15 +20,16 @@ public class ShoeModel {
             ResultSet results = statement.executeQuery("select * from shoe");
             while (results.next()) {
                 int id = results.getInt("id");
+                String sku = results.getString("sku");
                 String brand = results.getString("brand");
                 String sColor = results.getString("sColor");
-                String type = results.getString("type");
+                String title = results.getString("title");
                 String image = results.getString("image");
                 Timestamp timestamp = results.getTimestamp("timestamp");
                 String filename = results.getString("filename");
                 double rating = results.getDouble("rating");
 
-                Shoe shoe = new Shoe(id, brand, sColor, type, image, timestamp, filename, rating);
+                Shoe shoe = new Shoe(id,sku, brand, sColor, title, image, timestamp, filename, rating);
                 shoes.add(shoe);
             }
             results.close();
@@ -44,15 +45,16 @@ public class ShoeModel {
         try {
             Connection connection = DatabaseConnection.getConnection();
 
-            String query = "INSERT INTO shoe(brand,sColor,type,image,filename)"
+            String query = "INSERT INTO shoe(sku,brand,sColor,type,image,filename)"
                     + " VALUES(?,?,?,?,?)";
             PreparedStatement statement = connection.prepareStatement(query);
 
-            statement.setString(1, shoe.getBrand());
-            statement.setString(2, shoe.getsColor());
-            statement.setString(3, shoe.getsType());
-            statement.setString(4, shoe.getImage());
-            statement.setString(5, shoe.getFilename());
+            statement.setString(1, shoe.getSku());
+            statement.setString(2, shoe.getBrand());
+            statement.setString(3, shoe.getsColor());
+            statement.setString(4, shoe.getsTitle());
+            statement.setString(5, shoe.getImage());
+            statement.setString(6, shoe.getFilename());
 
             statement.execute();
             

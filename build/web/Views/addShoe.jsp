@@ -3,18 +3,22 @@
     Created on : Oct 31, 2024, 10:59:03 PM
     Author     : pedro
 --%>
-
+<%@ page import="java.io.*"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html>
+<html lang="en">
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="stylesheet" href="main.css" media="screen">
+        <link rel="stylesheet" type="text/css" href="Footer.css">
         <script src="scripts/loadImage.js"></script>
         <script src="scripts/rating.js"></script>
         <title>Add Shoe Page</title>
     </head>
+    <c:import url="/Views/header.jsp"/>
     <body>
+        <br><br>
         <h1>Your shoe review!</h1>
         <br>
 
@@ -23,18 +27,23 @@
                 <h3>Upload a Shoe picture!</h3>
                 <div id="data">
                     <input id="upImg" type="file" accept="image/*" name="file" required><br><br>
-                    <img class="shoeimage" id="img" src="images/genShoe.gif" alt="Shoe Image" >
+                    <img class="shoeimage" id="img" src=${image} alt="Shoe Image" >
                 </div><br>
             </righS>
+               
             <leftS>
-                <label >Brand &emsp;&emsp;&emsp;</label>
-                <input type="text" name="brand" required><br>
+                
+                <label >Brand: &emsp;&emsp;&emsp;</label>
+                <input class="noManInput" type="text" name="brand" required value="${brand}"><br>
                 <br>
-                <label >Color &emsp;&emsp;&emsp;</label>
-                <input type="text" name="sColor" required><br>
+                <label >Color: &emsp;&emsp;&emsp;</label>
+                <input class="noManInput" type="text" name="colorS" required value="${colorS}"><br>
                 <br><!-- comment -->
-                <label >Type &emsp;&emsp;&emsp;</label>
-                <input type="text" name="type" required><br>
+                <label >Name: &emsp;&emsp;&emsp;</label>
+                <input class="noManInput" type="text" name="nameS" value="${nameS}" readonly><br>
+                <br>
+                <label >Sku: &emsp;&emsp;&emsp;</label>
+                <input class="noManInput" type="text" name="sku" value="${sku}"><br>
                 <br>
                 <label >Rate the shoe: &emsp;&emsp;&emsp;</label>
                 
@@ -45,7 +54,7 @@
                     <span class="star" data-value="4">&#9733;</span>
                     <span class="star" data-value="5">&#9733;</span>
                     
-                    <input class="readonly" type="number" id="ratingField" name="rating" readonly />
+                    <input class="readonly" type="number" id="ratingField" name="rating" readonly="yes" />
                     <ratMax  >/ 5</ratMax>
                 </div>
                 <br>
@@ -59,6 +68,8 @@
 
         </form>
         <br><br>
+        
         <a href="DirectPage?option=Main">Back</a><br>
     </body>
+    <c:import url="/Views/footer.jsp"/>
 </html>

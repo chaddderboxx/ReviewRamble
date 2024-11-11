@@ -27,11 +27,21 @@ header {
 .container {
     width:100%;
 }
+.about-container {
+    display: flex;
+    gap: 20px;
+    width: 100%; /* Adjust as needed */
+    margin: 0 auto;
+    padding: 20px;
+}
 leftS {
     float: left;
     width: 50%;
 }
-
+.leftS {
+    float: left;
+    width: 40%;
+}
 
 .logo {
     margin-top: 10%;
@@ -42,6 +52,11 @@ leftS {
 righS {
     float: right;
     width: 50%;
+    margin-top: 140px;
+}
+.righS {
+    float: right;
+    width: 45%;
     margin-top: 140px;
 }
 
@@ -65,11 +80,6 @@ righS {
 
 }
 
-footer {
-    position: fixed;
-    margin-left: 5%;
-    margin-top: 40%;
-}
 
 errorMes {
     color: red;
@@ -104,14 +114,14 @@ errorMes {
     width: 55px;
     font-size: 1rem;
     padding-left: 20px;
-    
-    
+
+
 }
 ratMax {
     margin-top: 23px;
     margin-left: -43px;
     font-size: 1rem;
-    
+
 }
 .shoeimage {
     border-radius: 25px;
@@ -124,10 +134,10 @@ ratMax {
     height: auto;
 }
 table.searchTable {
-  border-collapse: separate;
-  border-spacing: 10px;
-  *border-collapse: expression('separate', cellSpacing='10px');
-    
+    border-collapse: separate;
+    border-spacing: 10px;
+    *border-collapse: expression('separate', cellSpacing='10px');
+
 }
 table.searchTable td {
     width:300px;
@@ -147,4 +157,38 @@ Label {
     color: #215E99;
     pointer-events: none;
     font-size: medium;
+    width:400px;
+}
+.col-sm-4 {
+    -ms-flex: 0 0 33.333333%;
+    flex: 0 0 33.333333%;
+    max-width: 33.333333%;
+}
+.thumbnail{
+    display:block;
+    padding:4px;
+    margin-bottom:20px;
+    line-height:1.42857143;
+    background-color:#fff;
+    border:1px solid #ddd;
+    border-radius:4px;
+    -webkit-transition:border .2s ease-in-out;
+    -o-transition:border .2s ease-in-out;
+    transition:border .2s ease-in-out
+}
+.container2{
+    padding-right:15px;
+    padding-left:15px;
+    margin-right:auto;
+    margin-left:auto
+}
+.form-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+}
+.form-container form {
+    border: 1px solid #ccc;
+    padding: 20px;
+    box-sizing: border-box;
 }

@@ -30,9 +30,9 @@
                 <img src="images/Home.png" alt="Home Icon" class="home-icon"> Home
             </a>
             <a href="DirectPage?option=About" class="about-link"> 
-                <img src="images/AboutIcon.png" alt="About Icon" class="about-icon"> About
+                <img src="images/about.gif" alt="About Icon" class="about-icon"> About
             </a>
-            <a href="DirectPage?option=MyReview" class="post-gallery-link">
+            <a href="MyReviews" class="post-gallery-link">
                 <img src="images/PostGalleryIcon.png" alt="Post Gallery Icon" class="postgallery-icon"> Post Gallery
             </a>
             <a href="Search" class="search-link">
@@ -40,6 +40,9 @@
             </a>
             <a href="index.html" class="post-link">
                 <img src="images/PostIcon.png" alt="Post Icon" class="post-icon"> Post
+            </a>
+            <a href="Profile" class="contact-link">
+                <img src="images/AboutIcon.png" alt="Contact Icon" class="contact-icon"> Profile
             </a>
             <a href="DirectPage?option=Contact" class="contact-link">
                 <img src="images/ContactIcon.png" alt="Contact Icon" class="contact-icon"> Contact
@@ -55,7 +58,7 @@
             <div class="content-block">
                 <h3>Shoes Market</h3>
                 <img src="images/MordorIntelligence.png" alt="Shoes Market" class="content-image">
-                <a href="#" class="read-more">Read More</a>
+                <a href="https://www.mordorintelligence.com/industry-reports/footwear-market" class="read-more">Read More</a>
             </div>
 
             <!-- Second Block: Major Players -->

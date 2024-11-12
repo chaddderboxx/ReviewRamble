@@ -21,6 +21,15 @@ header {
     position: fixed;
     color: #A6CAEC;
 }
+header a {
+    color:whitesmoke;
+}
+header img {
+    width:10px;
+}
+.headerRefs {
+    color:whitesmoke;
+}
 .TopTitle {
     margin-left: 15%;
 }

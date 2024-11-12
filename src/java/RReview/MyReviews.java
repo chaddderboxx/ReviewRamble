@@ -1,47 +1,41 @@
-
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Servlet.java to edit this template
+ */
 package RReview;
 
 import java.io.IOException;
 import java.io.PrintWriter;
-import javax.servlet.RequestDispatcher;
+import java.util.ArrayList;
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
+/**
+ *
+ * @author pedro
+ */
+@WebServlet(name = "MyReviews", urlPatterns = {"/MyReviews"})
+public class MyReviews extends HttpServlet {
 
-public class DirectPage extends HttpServlet {
-
-    
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        
-        String option = request.getParameter("option");
-        if(option.equalsIgnoreCase("About")){
-            RequestDispatcher RequetsDispatcherObj =request.getRequestDispatcher("/Views/about.jsp");
-            RequetsDispatcherObj.forward(request, response);
-        }
-        
-         if(option.equalsIgnoreCase("Search")){
-            RequestDispatcher RequetsDispatcherObj =request.getRequestDispatcher("/Views/search2.jsp");
-            RequetsDispatcherObj.forward(request, response);
-        }
-         if(option.equalsIgnoreCase("AddShoe")){
-            RequestDispatcher RequetsDispatcherObj =request.getRequestDispatcher("/Views/addShoe.jsp");
-            RequetsDispatcherObj.forward(request, response);
-        }
-        if(option.equalsIgnoreCase("Contact")){
-            RequestDispatcher RequetsDispatcherObj =request.getRequestDispatcher("/Views/contact.jsp");
-            RequetsDispatcherObj.forward(request, response);
-        }
-        if(option.equalsIgnoreCase("Profile")){
-            RequestDispatcher RequetsDispatcherObj =request.getRequestDispatcher("Profile");
-            RequetsDispatcherObj.forward(request, response);
-        }
-        if(option.equalsIgnoreCase("Main")){
-            RequestDispatcher RequetsDispatcherObj =request.getRequestDispatcher("/Views/main.jsp");
-            RequetsDispatcherObj.forward(request, response);
+        try {
+            HttpSession session = request.getSession();
+            String username = (String)session.getAttribute("username");
+            User cuser= UserModel.getUser(username);
+            int user_id=cuser.getId();
+            ArrayList<Post> posts = PostModel.getPostsByUserId(user_id);
+            
+            request.setAttribute("posts",posts);
+            String url = "/Views/myReviews.jsp";  
+            getServletContext().getRequestDispatcher(url).forward(request,response);
+        }catch(Exception ex){
+            exceptionPage(ex, request, response);
         }
         
     }
@@ -84,5 +78,10 @@ public class DirectPage extends HttpServlet {
     public String getServletInfo() {
         return "Short description";
     }// </editor-fold>
-
+private void exceptionPage(Exception ex, HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        String error = ex.toString();
+        request.setAttribute("error", error);
+        String url = "/Views/error.jsp";
+        getServletContext().getRequestDispatcher(url).forward(request,response);
+    }
 }

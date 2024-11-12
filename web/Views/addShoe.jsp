@@ -26,7 +26,7 @@
             <righS style="margin-top: 70px;">
                 <h3>Upload a Shoe picture!</h3>
                 <div id="data">
-                    <input id="upImg" type="file" accept="image/*" name="file" required><br><br>
+                    <input id="upImg" type="file" accept="image/*" name="file"><br><br>
                     <img class="shoeimage" id="img" src=${image} alt="Shoe Image" >
                 </div><br>
             </righS>
@@ -40,7 +40,7 @@
                 <input class="noManInput" type="text" name="colorS" required value="${colorS}"><br>
                 <br><!-- comment -->
                 <label >Name: &emsp;&emsp;&emsp;</label>
-                <input class="noManInput" type="text" name="nameS" value="${nameS}" readonly><br>
+                <input class="noManInput" type="text" name="nameS" value="${nameS}" readonly="yes"><br>
                 <br>
                 <label >Sku: &emsp;&emsp;&emsp;</label>
                 <input class="noManInput" type="text" name="sku" value="${sku}"><br>

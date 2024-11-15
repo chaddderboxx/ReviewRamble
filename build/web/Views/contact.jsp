@@ -15,21 +15,28 @@
         <br><!-- comment -->
         <br>
         <h1>Contact!</h1>
-        <form action="Contact" method ="post">
-                    <label >Name &emsp;&emsp;&emsp;</label>
-                    <input type="text" name="contactName" required><br>
-                    <br>
-                    <label >Email &emsp;&emsp;&emsp;&nbsp;</label>
-                    <input type="email" name="contactEmail" required><br>
-                    <br>
-                    <label >Message</label>
-                    <input type="text" name="contactMessage" required><br>
-                    <br>
-                    <input type="hidden" name="action" value="contact" />
-                    <input type="submit" class="button1" value="submit" class="margin_left">
+        <div class="about-container"> 
+        <leftS>
+                <img src="images/GroupIcon.jpg" class="logo" alt="RambleLogo"/>
+        </leftS>
+         <righS>
+            <form action="Contact" method ="post">
+                        <label >Name &emsp;&emsp;&emsp;</label>
+                        <input type="text" name="contactName" required><br>
+                        <br>
+                        <label >Email &emsp;&emsp;&emsp;&nbsp;</label>
+                        <input type="email" name="contactEmail" required><br>
+                        <br>
+                        <label >Message</label>
+                        <input type="textbox" name="contactMessage" required><br>
+                        <br>
+                        <input type="hidden" name="action" value="contact" />
+                        <input type="submit" class="button1" value="submit" class="margin_left">
 
-        </form>
+            </form>
+        </righS>
+    </div>
     </body>
-    <a href="DirectPage?option=Main">Back</a><br>
+    <br><br><br><br>
     <c:import url="/Views/footer.jsp"/>
 </html>

@@ -41,12 +41,12 @@ public class PostModel {
         return posts;
     }
     
-    public static ArrayList<Post> getPostsByUserId(int userId){
-        ArrayList<Post> posts = new ArrayList<>();
+    public static ArrayList<Review> getReviewByUserId(int userId){
+        ArrayList<Review> reviews = new ArrayList<>();
         try{
             Connection connection = DatabaseConnection.getConnection();
             
-             String query = "select * from post where user_id=?";
+             String query = "select * from post inner join shoe on post.shoe_id = shoe.id   where user_id=?";
             
             PreparedStatement statement = connection.prepareStatement(query);
             statement.setInt(1, userId);
@@ -55,15 +55,21 @@ public class PostModel {
             
             
             while(results.next()){
+                String sku =results.getString("sku");
+                String brand =results.getString("brand");
+                String sColor =results.getString("sColor");
+                String sName=results.getString("title");
+                String sImage=results.getString("filename");
+                Timestamp timeSt = results.getTimestamp("timestamp");
                 
-                int shoeId=results.getInt("shoe_id");
-                double pRating=results.getDouble("rating");
-                String  pComment = results.getString("comment");
-                Timestamp timestamp = results.getTimestamp("timestamp");
+                double myRating=results.getDouble("my_rating");
+                String  myComment = results.getString("comment");
+                double sRating= results.getInt("rating");
                 
                 
-                Post post = new Post(userId,shoeId,pRating,pComment,timestamp);
-                posts.add(post);
+                
+                Review review = new Review(sku,brand,sColor,sName,sImage,timeSt, myRating, myComment, sRating);
+                reviews.add(review);
             }
             results.close();
             statement.close();
@@ -71,7 +77,7 @@ public class PostModel {
         } catch(Exception ex) {
             System.out.println(ex);
         }
-        return posts;
+        return reviews;
     }
     
     
@@ -79,27 +85,33 @@ public class PostModel {
     
     
     
-       public static void addPost(Post post){
-       try{
-           Connection connection = DatabaseConnection.getConnection();
-           
-           String query="INSERT INTO post(user_id,shoe_id,rating,comment)"
-                    +" VALUES(?,?,?,?)";
-           PreparedStatement statement= connection.prepareStatement(query);
-           
-           statement.setInt(1,post.getUserId()) ;
-           statement.setInt(2, post.getShoeId());
-           statement.setDouble(3, post.getPRating());
-           statement.setString(4, post.getPComment());
-           
-           statement.execute();
-           
-           statement.close();
-           connection.close();
-       } catch(Exception ex){
-           System.out.println(ex);
+       public static void addPost(Post post) { 
+           Connection connection = null; 
+           PreparedStatement statement = null; 
+           try { 
+               connection = DatabaseConnection.getConnection(); 
+           String query = "INSERT INTO post(user_id, shoe_id, my_rating, comment) VALUES(?, ?, ?, ?)"; 
+           statement = connection.prepareStatement(query); 
+           statement.setInt(1, post.getUserId()); 
+           statement.setInt(2, post.getShoeId()); 
+           statement.setDouble(3, post.getPRating()); 
+           statement.setString(4, post.getPComment()); 
+           statement.executeUpdate(); 
+           } catch (Exception ex) { 
+               System.out.println(ex); 
+           } finally { 
+               try { 
+                   if (statement != null) {
+                       statement.close(); 
+                   } 
+                   if (connection != null) { 
+                       connection.close(); 
+                   } 
+               } catch (Exception e) {
+                   System.out.println(e);
+               } 
+            } 
        }
-    }
     /*
     public static ArrayList<TweetExtra> getTweetsNusers(){
         ArrayList<TweetExtra> tweetsE = new ArrayList<>();

@@ -29,9 +29,9 @@ public class MyReviews extends HttpServlet {
             String username = (String)session.getAttribute("username");
             User cuser= UserModel.getUser(username);
             int user_id=cuser.getId();
-            ArrayList<Post> posts = PostModel.getPostsByUserId(user_id);
+            ArrayList<Review> reviews = PostModel.getReviewByUserId(user_id);
             
-            request.setAttribute("posts",posts);
+            request.setAttribute("reviews",reviews);
             String url = "/Views/myReviews.jsp";  
             getServletContext().getRequestDispatcher(url).forward(request,response);
         }catch(Exception ex){

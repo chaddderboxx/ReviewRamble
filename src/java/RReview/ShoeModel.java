@@ -45,25 +45,106 @@ public class ShoeModel {
         try {
             Connection connection = DatabaseConnection.getConnection();
 
-            String query = "INSERT INTO shoe(sku,brand,sColor,type,image,filename)"
-                    + " VALUES(?,?,?,?,?)";
-            PreparedStatement statement = connection.prepareStatement(query);
+            String preparedSQL ="INSERT INTO shoe(sku,brand,sColor, title, filename)"
+                    +" VALUES(?,?,?,?,?)";
+                PreparedStatement preparedStatement = connection.prepareStatement(preparedSQL, Statement.RETURN_GENERATED_KEYS);
 
-            statement.setString(1, shoe.getSku());
-            statement.setString(2, shoe.getBrand());
-            statement.setString(3, shoe.getsColor());
-            statement.setString(4, shoe.getsTitle());
-            statement.setString(5, shoe.getImage());
-            statement.setString(6, shoe.getFilename());
+                preparedStatement.setString(1,shoe.getSku()) ;
+                preparedStatement.setString(2,shoe.getBrand()) ;
+                preparedStatement.setString(3,shoe.getsColor()) ;
+                preparedStatement.setString(4,shoe.getsTitle()) ;
+                //preparedStatement.setBlob(4, inputStream);
+                preparedStatement.setString(5, shoe.getImage());
+                
 
-            statement.execute();
-            
-            statement.close();
+            preparedStatement.execute();
+            preparedStatement.close();
             connection.close();
         } catch (Exception ex) {
             System.out.println(ex);
         }
     }
+    public static int  getShoeIdBySku(String skuToSearch) {
+        
+        int shoeId=0;
+        try {
+            Connection connection = DatabaseConnection.getConnection();
+            
+            String query ="select * from shoe where sku=?";
+            
+            PreparedStatement statement = connection.prepareStatement(query);
+            statement.setString(1, skuToSearch);
+            
+            ResultSet results = statement.executeQuery();
+            
+            while ( results.next() ){
+                 
+                 shoeId= results.getInt("id");
+                 
+            }//end while
+            
+            results.close();
+            statement.close();
+            connection.close();
+            
+            
+            
+        } catch (Exception ex) {
+            System.out.println(ex);
+        }//end try
+        
+        return shoeId;
+    }//end method
+    public static QRResult getRatSumAndQtyById(int idToSearch) {
+        double sQty=0;
+        double ratSum=0;
+        
+        try {
+            Connection connection = DatabaseConnection.getConnection();
+            String query ="SELECT  count(*) AS quantity, SUM(post.my_rating) AS suma FROM post WHERE shoe_id=?";
+            
+            PreparedStatement statement = connection.prepareStatement(query);
+            statement.setInt(1, idToSearch);
+            
+            ResultSet results = statement.executeQuery();
+            
+            while ( results.next() ){
+                sQty=results.getInt("quantity");
+                ratSum = results.getDouble("suma"); 
+            }//end while
+            
+            results.close();
+            statement.close();
+            
+            
+            
+            connection.close();
+        } catch (Exception ex) {
+            System.out.println(ex);
+        }//end try
+        QRResult result = new QRResult(ratSum,sQty);
+        return result;
+    }//end method
+    
+    public static void updateRanking(Shoe shoe, double rank) {
+        try { 
+            Connection connection = DatabaseConnection.getConnection(); 
+            String query = "UPDATE shoe SET rating = ? WHERE sku = ?"; 
+            PreparedStatement statement = connection.prepareStatement(query); 
+            statement.setDouble(1, rank); 
+            statement.setString(2, shoe.getSku()); 
+            statement.executeUpdate(); 
+            statement.close(); 
+            connection.close(); 
+    } catch (Exception ex) { 
+        System.out.println(ex); 
+        } 
+    }//end try
+        
+        
+    
+    
+    
     /*   
     public static ArrayList<TweetExtra> getTweetsNusers(){
         ArrayList<TweetExtra> tweetsE = new ArrayList<>();
@@ -184,4 +265,4 @@ public class ShoeModel {
         return tweetsE;
     }
      */
-}
+}//end model

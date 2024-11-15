@@ -33,7 +33,7 @@
                 <img src="images/about.gif" alt="About Icon" class="about-icon"> About
             </a>
             <a href="MyReviews" class="post-gallery-link">
-                <img src="images/PostGalleryIcon.png" alt="Post Gallery Icon" class="postgallery-icon"> Post Gallery
+                <img src="images/PostGalleryIcon.png" alt="Post Gallery Icon" class="postgallery-icon"> My Posts Gallery
             </a>
             <a href="Search" class="search-link">
                 <img src="images/SearchIcon.png" alt="Search Icon" class="search-icon"> Search
@@ -103,7 +103,6 @@
     <div class="footer-container">
         <div class="footer-column">
             <h3>Content Links</h3>
-            <a href="#">Rate a Shoe</a>
             <a href="#">Review Gallery</a>
             <a href="#">Top Rated Shoes</a>
             <a href="#">New Arrivals</a>

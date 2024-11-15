@@ -48,7 +48,7 @@
                 <a href="index.html">Back</a>
             </righS>
         </container>
-        <c:import url="/Views/footer.jsp"/>
+        
     </body>
 </html>
 

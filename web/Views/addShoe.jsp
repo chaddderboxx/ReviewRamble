@@ -27,7 +27,8 @@
                 <h3>Upload a Shoe picture!</h3>
                 <div id="data">
                     <input id="upImg" type="file" accept="image/*" name="file"><br><br>
-                    <img class="shoeimage" id="img" src=${image} alt="Shoe Image" >
+                    <img class="shoeimage"  id="img" src=${image} alt="Shoe Image" >
+                    <input type="hidden" id="imgFileName" name="sImg" value="${image}" >
                 </div><br>
             </righS>
                

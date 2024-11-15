@@ -116,6 +116,13 @@ errorMes {
 .star.filled {
     color: #f39c12; /* Filled star color */
 }
+.star2 { 
+    font-size: 2em; 
+    color: gold; 
+} 
+.star2.empty { 
+    color: lightgray; 
+}
 .readonly {
     color: #215E99;
     background: transparent;
@@ -137,6 +144,12 @@ ratMax {
     width: 340px;
     height: auto;
 }
+.reviewimage {
+    border-radius: 10px;
+    width: 100px;
+    height: auto;
+}
+
 .searchImage {
     border-radius: 10px;
     width: 140px;
@@ -200,4 +213,13 @@ Label {
     border: 1px solid #ccc;
     padding: 20px;
     box-sizing: border-box;
+}
+.myReviews li{
+    padding-top: 5px;
+    padding-bottom: 5px;
+    height:80px;
+    border:1px solid #ddd;
+    border-radius:4px;
+    padding-left: 10px;
+    width:98%;
 }

@@ -23,15 +23,11 @@ import javax.servlet.http.Part;
 @MultipartConfig(maxFileSize=1000000)
 
 public class UploadShoe extends HttpServlet {
-
    
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        
-        
-
-        
+                
         InputStream inputStream = null; // input stream of the upload file
         String fileName = "";
         // obtains the upload file part in this multipart request
@@ -41,87 +37,50 @@ public class UploadShoe extends HttpServlet {
             // obtains input stream of the upload file
             inputStream = filePart.getInputStream();
         }
+        
         String sku = request.getParameter("sku");
         String brand= request.getParameter("brand");
         String colorS= request.getParameter("colorS");
         String nameS = request.getParameter("nameS");
-        //String filename=request.getParameter("file");
+        String filename=request.getParameter("sImg");
         String rating = request.getParameter("rating");
         String comment = request.getParameter("comment");
+        
+        Shoe theShoe= new Shoe(sku,brand,colorS,nameS,filename);
+        
+        double ratingD = Double.parseDouble(rating);
         
         try{
             HttpSession session = request.getSession();
             String username = (String)session.getAttribute("username");
             User cuser= UserModel.getUser(username);
             int user_id=cuser.getId();
+            int shoeId= ShoeModel.getShoeIdBySku(sku);
+            QRResult qrresult = ShoeModel.getRatSumAndQtyById(shoeId);
             
-            Connection connection = DatabaseConnection.getConnection();
             
-            String preparedSQL ="INSERT INTO shoe(sku,brand,sColor, title, filename, rating)"
-                    +" VALUES(?,?,?,?,?,?)";
-           PreparedStatement preparedStatement = connection.prepareStatement(preparedSQL, Statement.RETURN_GENERATED_KEYS);
-           
-           preparedStatement.setString(1,sku) ;
-           preparedStatement.setString(2,brand) ;
-           preparedStatement.setString(3,colorS) ;
-           preparedStatement.setString(4,nameS) ;
-           //preparedStatement.setBlob(4, inputStream);
-           preparedStatement.setString(5, fileName);
-           preparedStatement.setString(6, rating);
-           
-           int affectedRows = preparedStatement.executeUpdate();
-           
-           int id=0;
-            if (affectedRows > 0) {
-                ResultSet generatedKeys = preparedStatement.getGeneratedKeys();
-                if (generatedKeys.next()) {
-                    id = generatedKeys.getInt(1);
-                    
-                }
-            }
-           preparedStatement.close();
+                int id=0;
+                double NewRank=0;
+            if (qrresult.getRatQty()==0){
+            
+                ShoeModel.addShoe(theShoe);
+            };
+            NewRank = ((qrresult.getRatingSum()+ratingD)/(qrresult.getRatQty()+1));
+            
+            id= ShoeModel.getShoeIdBySku(sku);
+            
+            ShoeModel.updateRanking(theShoe, NewRank);
+             Post post=new Post(user_id,id,ratingD,comment);   
+             PostModel.addPost(post);
            ///////////////////////////////////////////////////
-           String preparedSQL2 ="INSERT INTO post(user_id,shoe_id, rating, comment)"
-                    +" VALUES(?,?,?,?)";
-           PreparedStatement preparedStatement2 = connection.prepareStatement(preparedSQL2, Statement.RETURN_GENERATED_KEYS);
            
-           preparedStatement2.setInt(1,user_id) ;
-           preparedStatement2.setInt(2,id) ;
-           preparedStatement2.setString(3,rating) ;
-           preparedStatement2.setString(4,comment) ;
-            
-            int affectedRows2 = preparedStatement2.executeUpdate();
-             
-            
-            //////////////////////////////////
-            long id2=0;
-            if (affectedRows2 > 0) {
-                ResultSet generatedKeys2 = preparedStatement2.getGeneratedKeys();
-                if (generatedKeys2.next()) {
-                    id2 = generatedKeys2.getLong(1);
-                    
-                }
-            }
-
-            //////////////////////////////////
-            
-            
-            preparedStatement2.close();
-            
-            connection.close();
+           
             RequestDispatcher RequetsDispatcherObj =request.getRequestDispatcher("/Views/main.jsp");
             RequetsDispatcherObj.forward(request, response); 
                 
-        }catch (SQLException ex) {
-            request.setAttribute("error", ex.toString());
-            String url = "/Views/error.jsp";
-            getServletContext().getRequestDispatcher(url).forward(request, response);
-        } catch (ClassNotFoundException ex) {
-            request.setAttribute("error", ex.toString());
-            String url = "/Views/error.jsp";
-            getServletContext().getRequestDispatcher(url).forward(request, response);
-        
-        }
+        }catch(Exception ex) {
+            System.out.println(ex);
+        } 
         
     }
     private String extractFileName(Part part) {

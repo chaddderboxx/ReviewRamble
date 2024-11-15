@@ -15,18 +15,25 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="stylesheet" href="main.css" media="screen">
         <link rel="stylesheet" type="text/css" href="Footer.css">
-        <title>JSP Page</title>
+        <script src="scripts/paintStars.js"></script>
+        <title>My Reviews Page</title>
     </head>
     <c:import url="/Views/header.jsp"/>
     <body>
         <br><br>
         <h1>My Reviews!</h1>
         <br><!-- comment -->
-        
-        <ul> <c:forEach var="item" items="${posts}"> 
-                <li>Shoe Id:${item.getShoeId()} My Rating:${item.getPRating()}   My Comments: ${item.getPComment()}</li> 
-            </c:forEach> 
-        </ul>
+        <div class="myReviews">
+            <div>&emsp; Image     Shoe Id            My Comments:             My Rating:          </div>
+            <ul id="ratingList"><c:forEach var="item" items="${reviews}"> 
+                    <li data-rating="${item.getmyRating()}">
+                        <img class="reviewimage" src="${item.getImage()}" alt="Shoe img">
+                        &emsp; Shoe Id:${item.getSku()} &emsp;   My Comments: ${item.getmyComment()}&emsp;
+                        My Rating: ${item.getmyRating()}
+                    </li> 
+                </c:forEach> 
+            </ul><!-- comment -->
+        </div>
             
         <br><!-- comment -->
         <a href="DirectPage?option=Main">Home</a><br>

@@ -12,33 +12,41 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="stylesheet" href="main.css" media="screen">
         <link rel="stylesheet" type="text/css" href="Footer.css">
-        <%--<script src="scripts/apiData2.js"></script>--%>
+        <script src="scripts/Pager.js"></script>
         
         <title>Search Page</title>
     </head>
     <c:import url="/Views/header.jsp"/>
     <body>
         <%
-            String pag ="1";
-            String lookUpStr="";
-            //ArrayList <Shoe> products= ApiMng.getProductsByPage(pag,lookUpStr);
+            
+            String pag1 = request.getParameter("pag");;
+            
+            String lookUpStr1 = request.getParameter("lookUpStr");
         %>    
         <br><br>
         <h1>Search!</h1>
         <form id="searchForm" action="getSearch" method="Post" > 
-            <label>Search: <input  id='lookUpStr' type="search" name="lookUpStr" accesskey="s 0" ></label>
-            <label>Page:<input  id='pageN' type="search" name="pag" accesskey="s 0" value="1"></label>
+            <div class="pagination">
+            <label>Search: <input  id='lookUpStr' type="search" name="lookUpStr" accesskey="s 0" value="<%=lookUpStr1%>" ></label>
+            
+                <label>Page:<input class="readonly" id='pageN' type="search" name="pag" accesskey="s 0" readonly="yes" value="<%=pag1%>"></label>
+                <button id="PgUp">Page Up</button> 
+                &nbsp;
+                <button id="PgDwn">Page Down</button>
+            </div>
+            
             <input class='button2' id='search' type="submit" value="Go">
             <% 
-                lookUpStr = request.getParameter("lookUpStr"); 
-                pag = request.getParameter("pag");
+                //lookUpStr = request.getParameter("lookUpStr"); 
+                pag1 = request.getParameter("pag");
                 //if (lookUpStr == null){
                 //    lookUpStr="";
                 //};
-                ArrayList <Shoe> products= ApiMng.getProductsByPage(pag,lookUpStr);
+                ArrayList <Shoe> products= ApiMng.getProductsByPage(pag1,lookUpStr1);
             %>
         </form><br>
-        
+          
         <div class="form-container">
         <%
                         for ( Shoe product : products) {

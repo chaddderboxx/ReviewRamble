@@ -215,6 +215,9 @@ Label {
     box-sizing: border-box;
 }
 .myReviews li{
+    display: flex; 
+    flex-direction: row; 
+    justify-content: space-around;
     padding-top: 5px;
     padding-bottom: 5px;
     height:80px;
@@ -222,4 +225,26 @@ Label {
     border-radius:4px;
     padding-left: 10px;
     width:98%;
+}
+
+.MyComments {
+    
+    background-color: cornsilk;
+    border:1px solid #ddd;
+    border-radius:2px;
+    width:250px;
+    height:70px;
+}
+.pagination { 
+    display: flex; 
+    flex-direction: row; 
+    margin-top: 20px; 
+    margin: 0 5px; 
+    padding: 10px; 
+}
+.pagination button {
+    background-color: #156082;
+    color:whitesmoke;
+    width:80px;
+    border-radius:4px;
 }

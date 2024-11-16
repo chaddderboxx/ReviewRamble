@@ -18,6 +18,7 @@ public class Search extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         try {
             ArrayList<Shoe> shoes = ShoeModel.getShoe();
+            request.setAttribute("lookUpStr", "");
             request.setAttribute("shoes",shoes);
             String url = "/Views/search3.jsp";  
             getServletContext().getRequestDispatcher(url).forward(request,response);

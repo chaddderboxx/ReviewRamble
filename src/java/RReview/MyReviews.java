@@ -25,6 +25,11 @@ public class MyReviews extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try {
+            if (!Login.ensureUserIsLoggedIn(request)) {
+                request.setAttribute("message", "You must login");
+                response.sendRedirect("Login");
+            return;
+            }
             HttpSession session = request.getSession();
             String username = (String)session.getAttribute("username");
             User cuser= UserModel.getUser(username);

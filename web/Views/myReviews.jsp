@@ -24,11 +24,14 @@
         <h1>My Reviews!</h1>
         <br><!-- comment -->
         <div class="myReviews">
-            <div>&emsp; Image     Shoe Id            My Comments:             My Rating:          </div>
+            
             <ul id="ratingList"><c:forEach var="item" items="${reviews}"> 
                     <li data-rating="${item.getmyRating()}">
                         <img class="reviewimage" src="${item.getImage()}" alt="Shoe img">
-                        &emsp; Shoe Id:${item.getSku()} &emsp;   My Comments: ${item.getmyComment()}&emsp;
+                        &emsp; Id:${item.getSku()} &emsp;
+                        <div class="MyComments">
+                        My Comments: ${item.getmyComment()}&emsp;
+                        </div>
                         My Rating: ${item.getmyRating()}
                     </li> 
                 </c:forEach> 

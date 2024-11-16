@@ -17,8 +17,8 @@ public class getSearch extends HttpServlet {
             response.getWriter().println("GET request handled"); 
             request.setAttribute("pag", pag);
             request.setAttribute("lookUpStr", lookUpStr);
-            //String url = "/Views/search3.jsp";
-            //getServletContext().getRequestDispatcher(url).forward(request, response);
+            String url = "/Views/search3.jsp";
+            getServletContext().getRequestDispatcher(url).forward(request, response);
     } 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException { 
             String url = "/Views/search3.jsp";

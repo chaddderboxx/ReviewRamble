@@ -28,7 +28,7 @@
             <ul id="ratingList"><c:forEach var="item" items="${reviews}"> 
                     <li data-rating="${item.getmyRating()}">
                         <img class="reviewimage" src="${item.getImage()}" alt="Shoe img">
-                        &emsp; Id:${item.getSku()} &emsp;
+                        <div class="sku"> Id:${item.getSku()} </div>
                         <div class="MyComments">
                         My Comments: ${item.getmyComment()}&emsp;
                         </div>

@@ -217,7 +217,7 @@ Label {
 .myReviews li{
     display: flex; 
     flex-direction: row; 
-    justify-content: space-around;
+    justify-content: space-around ;
     padding-top: 5px;
     padding-bottom: 5px;
     height:80px;
@@ -232,7 +232,7 @@ Label {
     background-color: cornsilk;
     border:1px solid #ddd;
     border-radius:2px;
-    width:250px;
+    width:350px;
     height:70px;
 }
 .pagination { 
@@ -247,4 +247,7 @@ Label {
     color:whitesmoke;
     width:80px;
     border-radius:4px;
+}
+.sku {
+    width:140px;
 }

@@ -36,10 +36,10 @@
                 <img src="images/PostGalleryIcon.png" alt="Post Gallery Icon" class="postgallery-icon"> My Posts Gallery
             </a>
             <a href="Search" class="search-link">
-                <img src="images/SearchIcon.png" alt="Search Icon" class="search-icon"> Search
+                <img src="images/SearchIcon.png" alt="Search Icon" class="search-icon"> Search and Post
             </a>
-            <a href="index.html" class="post-link">
-                <img src="images/PostIcon.png" alt="Post Icon" class="post-icon"> Post
+            <a href="TheReviews" class="post-link">
+                <img src="images/PostIcon.png" alt="Post Icon" class="post-icon"> The Reviews
             </a>
             <a href="Profile" class="contact-link">
                 <img src="images/AboutIcon.png" alt="Contact Icon" class="contact-icon"> Profile

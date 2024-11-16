@@ -70,7 +70,7 @@ public class Review {
     public String getmyComment() {
         return myComment;
     }
-    public double geSrating() {
+    public double getRating() {
         return sRating;
     }    
 }

@@ -80,6 +80,82 @@ public class PostModel {
         return reviews;
     }
     
+    public static ArrayList<Review> getReviewByShoeId(int shoeId){
+        ArrayList<Review> reviews = new ArrayList<>();
+        try{
+            Connection connection = DatabaseConnection.getConnection();
+            
+             String query = "select * from post inner join shoe on post.shoe_id = shoe.id   where shoe_id=?";
+            
+            PreparedStatement statement = connection.prepareStatement(query);
+            statement.setInt(1, shoeId);
+            
+            ResultSet results = statement.executeQuery();
+            
+            
+            while(results.next()){
+                String sku =results.getString("sku");
+                String brand =results.getString("brand");
+                String sColor =results.getString("sColor");
+                String sName=results.getString("title");
+                String sImage=results.getString("filename");
+                Timestamp timeSt = results.getTimestamp("timestamp");
+                
+                double myRating=results.getDouble("my_rating");
+                String  myComment = results.getString("comment");
+                double sRating= results.getInt("rating");
+                
+                
+                
+                Review review = new Review(sku,brand,sColor,sName,sImage,timeSt, myRating, myComment, sRating);
+                reviews.add(review);
+            }
+            results.close();
+            statement.close();
+            connection.close();
+        } catch(Exception ex) {
+            System.out.println(ex);
+        }
+        return reviews;
+    }        
+    public static ArrayList<Review> getAllReviews(){
+        ArrayList<Review> reviews = new ArrayList<>();
+        try{
+            Connection connection = DatabaseConnection.getConnection();
+            
+             String query = "select * from post inner join shoe on post.shoe_id = shoe.id order by rating" ;
+            
+            PreparedStatement statement = connection.prepareStatement(query);
+            
+            
+            ResultSet results = statement.executeQuery();
+            
+            
+            while(results.next()){
+                String sku =results.getString("sku");
+                String brand =results.getString("brand");
+                String sColor =results.getString("sColor");
+                String sName=results.getString("title");
+                String sImage=results.getString("filename");
+                Timestamp timeSt = results.getTimestamp("timestamp");
+                
+                double myRating=results.getDouble("my_rating");
+                String  myComment = results.getString("comment");
+                double sRating= results.getInt("rating");
+                
+                
+                
+                Review review = new Review(sku,brand,sColor,sName,sImage,timeSt, myRating, myComment, sRating);
+                reviews.add(review);
+            }
+            results.close();
+            statement.close();
+            connection.close();
+        } catch(Exception ex) {
+            System.out.println(ex);
+        }
+        return reviews;
+    }
     
     
     

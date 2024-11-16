@@ -17,7 +17,7 @@ public class ShoeModel {
         try {
             Connection connection = DatabaseConnection.getConnection();
             Statement statement = connection.createStatement();
-            ResultSet results = statement.executeQuery("select * from shoe");
+            ResultSet results = statement.executeQuery("select * from shoe order by rating desc");
             while (results.next()) {
                 int id = results.getInt("id");
                 String sku = results.getString("sku");

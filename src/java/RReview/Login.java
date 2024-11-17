@@ -31,28 +31,19 @@ public class Login extends HttpServlet {
                         String hashedPass = toHexString(getSHA(pass));
                         
                         User user = UserModel.getUser(username);
-                        String hashedStoredPass = user.getPassword();
-                        if (hashedPass.equals(hashedStoredPass) ){
+                        String hashedStoredPass = null;
+                        if (user!=null){
+                            hashedStoredPass = user.getPassword();
+                        }
+                        
+                        
+                        if ((hashedPass.equals(hashedStoredPass))&& (user!=null) ){
                             //start session
                             HttpSession session = request.getSession();
                             
                             session.setAttribute("username",username);
                             User user1= UserModel.getUser(username);
-                            // Password matches go to main
-                            /*
-                            ArrayList<TweetExtra> tweets = TweetModel.getTweetsNusers2(user1.getId());
-                            request.setAttribute("tweets",tweets);
-                            ArrayList<User> users = UserModel.getUsers();
-                            request.setAttribute("users",users);
-                            request.setAttribute("user",user);
                             
-                            ArrayList<Integer> followed= FollowModel.getFollowed(user.getId());
-                            ArrayList<Integer> allusers= FollowModel.allUsersId();
-                            ArrayList<FollowedUser> fusers =FollowModel.getFollowedUser(followed, allusers, users);
-                            ArrayList<NotFollowedUser> nfusers =FollowModel.getNotFollowedUser(followed, allusers, users);
-                            request.setAttribute("fusers",fusers);
-                            request.setAttribute("nfusers",nfusers);
-                            */
                             String url = "/Views/main.jsp";
                             getServletContext().getRequestDispatcher(url).forward(request,response); 
                         }else{

@@ -54,13 +54,16 @@ public class ApiMng extends HttpServlet {
                 JSONArray results1= (JSONArray) jsonObject1.get("hits");
                 
                 for (int j=0;j<20;j++){
-                   String sBrand= (String) results1.getJSONObject(j).get("brand");
-                   String sColor= (String) results1.getJSONObject(j).get("color");
-                   String sTitle= (String) results1.getJSONObject(j).get("title");
-                   String sku = (String) results1.getJSONObject(j).get("sku");
-                   String sImage = (String) results1.getJSONObject(j).get("image");
-                   Shoe shoe = new Shoe(sku, sBrand ,sColor,sTitle,sImage);
-                   products.add(shoe);
+                   String categ =(String) results1.getJSONObject(j).get("category");
+                   if(categ.equals("Apparel & Accessories > Shoes")){ 
+                        String sBrand= (String) results1.getJSONObject(j).get("brand");
+                        String sColor= (String) results1.getJSONObject(j).get("color");
+                        String sTitle= (String) results1.getJSONObject(j).get("title");
+                        String sku = (String) results1.getJSONObject(j).get("sku");
+                        String sImage = (String) results1.getJSONObject(j).get("image");
+                        Shoe shoe = new Shoe(sku, sBrand ,sColor,sTitle,sImage);
+                        products.add(shoe);
+                   }
                 }
                 
                

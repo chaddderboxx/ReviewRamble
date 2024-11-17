@@ -31,10 +31,10 @@
             <righS>
                 <h1> Login </h1><br><br>
                 <form action="Login" method ="post">
-                    <label >Username</label>
+                    <label class="passwordLabel">Username</label>
                     <input type="text" name="username" required><br>
                     <br>
-                    <label >Password</label>
+                    <label class="passwordLabel" >Password </label>
                     <input type="password" name="password" required><br>
                     <br>
                     <input type="hidden" name="action" value="autent">

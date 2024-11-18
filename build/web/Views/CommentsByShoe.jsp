@@ -1,8 +1,4 @@
-<%-- 
-    Document   : CommentsByShoe
-    Created on : Nov 16, 2024, 12:49:41 AM
-    Author     : pedro
---%>
+
 <%@ page import="java.io.*"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -33,7 +29,7 @@
                         Rating: ${item.getmyRating()}
                     </li> 
                 </c:forEach> 
-            </ul><!-- comment -->
+            </ul>
         </div>
 
         <br>

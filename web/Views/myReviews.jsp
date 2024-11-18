@@ -1,8 +1,4 @@
-<%-- 
-    Document   : myReviews
-    Created on : Oct 31, 2024, 11:10:05 PM
-    Author     : pedro
---%>
+
 <%@page import="RReview.Post"%>
 <%@page import="RReview.PostModel"%>
 <%@page import="java.util.ArrayList"%>

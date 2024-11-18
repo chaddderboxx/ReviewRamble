@@ -1,8 +1,3 @@
-<%-- 
-    Document   : autent
-    Created on : Oct 27, 2024, 12:11:40 AM
-    Author     : pedro
---%>
 
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>

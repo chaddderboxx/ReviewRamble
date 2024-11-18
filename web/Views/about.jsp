@@ -1,8 +1,4 @@
-<%-- 
-    Document   : about
-    Created on : Oct 27, 2024, 8:03:26 PM
-    Author     : pedro
---%>
+
 <%@ page import="java.io.*"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>

@@ -8,8 +8,8 @@ int currentYear = currentDate.get(Calendar.YEAR);
     <div class="footer-container">
         <div class="footer-column">
             <h3>Content Links</h3>
-            <a href="#">Review Gallery</a>
-            <a href="#">Top Rated Shoes</a>
+            <a href="TheReviews">Review Gallery</a>
+            <a href="Top3">Top Rated Shoes</a>
             <a href="#">New Arrivals</a>
         </div>
         <div class="footer-column center-column">

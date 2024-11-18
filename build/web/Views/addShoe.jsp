@@ -1,8 +1,4 @@
-<%-- 
-    Document   : addShoe
-    Created on : Oct 31, 2024, 10:59:03 PM
-    Author     : pedro
---%>
+
 <%@ page import="java.io.*"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>

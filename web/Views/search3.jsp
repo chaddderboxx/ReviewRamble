@@ -20,9 +20,10 @@
     <body>
         <%
             
-            String pag1 = request.getParameter("pag");;
-            
+            String pag1 = request.getParameter("pag");
+            if(pag1==null){pag1="1";}
             String lookUpStr1 = request.getParameter("lookUpStr");
+            if(lookUpStr1==null){lookUpStr1="";}
         %>    
         <br><br>
         <h1>Search!</h1>
@@ -38,11 +39,9 @@
             
             <input class='button2' id='search' type="submit" value="Go">
             <% 
-                //lookUpStr = request.getParameter("lookUpStr"); 
+                 
                 pag1 = request.getParameter("pag");
-                //if (lookUpStr == null){
-                //    lookUpStr="";
-                //};
+                
                 ArrayList <Shoe> products= ApiMng.getProductsByPage(pag1,lookUpStr1);
             %>
         </form><br>

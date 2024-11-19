@@ -59,10 +59,9 @@
                                         <input type="text" class="noManInput" name="brand" id="output1" value="<%=product.getBrand()%>"><br>
                                         <img class="searchImage" id="sImg1" name="image" src="<%=product.getImage()%>" alt="shoe image1"><br>
                                         <input type="hidden" class="noManInput" name="image" id="image" value="<%=product.getImage()%>">
-                                        <label>Color:</label>
-                                        <input type="text" class="noManInput" id="color1" name="colorS" value="<%=product.getsColor()%>">
+                                        <label>Color:</label><input type="text" class="noManInput" id="color1" name="colorS" value="<%=product.getsColor()%>"><br>
                                         <label>Name:</label>
-                                        <input type="text" class="noManInput" id="name1" name="nameS" value="<%=product.getsTitle()%>">
+                                        <input type="text" class="noManInput" id="name1" name="nameS" value="<%=product.getsTitle()%>"><br>
                                         <label>SKU:</label>
                                         <input type="text" class="noManInput" id="sku1" name="sku" value="<%=product.getSku()%>"><br>
                                     

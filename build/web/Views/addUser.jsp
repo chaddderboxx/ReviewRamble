@@ -1,14 +1,10 @@
-<%-- 
-    Document   : addUser
-    Created on : Oct 27, 2024, 12:13:02 AM
-    Author     : pedro
---%>
+
 
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html>
+<html lang="en">
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="stylesheet" href="main.css" media="screen">
@@ -48,7 +44,7 @@
                 <a href="index.html">Back</a>
             </righS>
         </container>
-        <c:import url="/Views/footer.jsp"/>
+        
     </body>
 </html>
 

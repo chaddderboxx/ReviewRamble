@@ -22,10 +22,7 @@ public class DirectPage extends HttpServlet {
             RequestDispatcher RequetsDispatcherObj =request.getRequestDispatcher("/Views/about.jsp");
             RequetsDispatcherObj.forward(request, response);
         }
-        if(option.equalsIgnoreCase("MyReview")){
-            RequestDispatcher RequetsDispatcherObj =request.getRequestDispatcher("/Views/myReviews.jsp");
-            RequetsDispatcherObj.forward(request, response);
-        }
+        
          if(option.equalsIgnoreCase("Search")){
             RequestDispatcher RequetsDispatcherObj =request.getRequestDispatcher("/Views/search2.jsp");
             RequetsDispatcherObj.forward(request, response);
@@ -46,6 +43,7 @@ public class DirectPage extends HttpServlet {
             RequestDispatcher RequetsDispatcherObj =request.getRequestDispatcher("/Views/main.jsp");
             RequetsDispatcherObj.forward(request, response);
         }
+        
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

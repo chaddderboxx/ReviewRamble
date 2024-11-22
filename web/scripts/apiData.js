@@ -42,9 +42,9 @@ function searchShoe() {
                 for(let i=0;i<3;i++){
                     outputs[i].value =json.hits[i].brand;
                     sImages[i].src=json.hits[i].image;
-                    colorS[i].innerHTML =json.hits[i].color;
-                    nameS[i].innerHTML =json.hits[i].title;
-                    skuS[i].innerHTML =json.hits[i].sku;
+                    colorS[i].value =json.hits[i].color;
+                    nameS[i].value =json.hits[i].title;
+                    skuS[i].value =json.hits[i].sku;
                     let shoe = new Shoe(json.hits[i].brand,json.hits[i].image,json.hits[i].color,json.hits[i].title,json.hits[i].sku);
                     Shoes.push(shoe);
                 }

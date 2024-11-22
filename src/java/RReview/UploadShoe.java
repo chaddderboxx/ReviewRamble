@@ -23,15 +23,11 @@ import javax.servlet.http.Part;
 @MultipartConfig(maxFileSize=1000000)
 
 public class UploadShoe extends HttpServlet {
-
    
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        
-        
-
-        
+                
         InputStream inputStream = null; // input stream of the upload file
         String fileName = "";
         // obtains the upload file part in this multipart request
@@ -41,61 +37,50 @@ public class UploadShoe extends HttpServlet {
             // obtains input stream of the upload file
             inputStream = filePart.getInputStream();
         }
+        
+        String sku = request.getParameter("sku");
         String brand= request.getParameter("brand");
-        String sColor= request.getParameter("sColor");
-        String type = request.getParameter("type");
+        String colorS= request.getParameter("colorS");
+        String nameS = request.getParameter("nameS");
+        String filename=request.getParameter("sImg");
         String rating = request.getParameter("rating");
         String comment = request.getParameter("comment");
+        
+        Shoe theShoe= new Shoe(sku,brand,colorS,nameS,filename);
+        
+        double ratingD = Double.parseDouble(rating);
         
         try{
             HttpSession session = request.getSession();
             String username = (String)session.getAttribute("username");
-                        
-            Connection connection = DatabaseConnection.getConnection();
+            User cuser= UserModel.getUser(username);
+            int user_id=cuser.getId();
+            int shoeId= ShoeModel.getShoeIdBySku(sku);
+            QRResult qrresult = ShoeModel.getRatSumAndQtyById(shoeId);
             
-            String preparedSQL ="INSERT INTO shoe(brand,sColor, type, image, filename)"
-                    +" VALUES(?,?,?,?,?)";
-           PreparedStatement preparedStatement = connection.prepareStatement(preparedSQL, Statement.RETURN_GENERATED_KEYS);
+            
+                int id=0;
+                double NewRank=0;
+            if (qrresult.getRatQty()==0){
+            
+                ShoeModel.addShoe(theShoe);
+            };
+            NewRank = ((qrresult.getRatingSum()+ratingD)/(qrresult.getRatQty()+1));
+            
+            id= ShoeModel.getShoeIdBySku(sku);
+            
+            ShoeModel.updateRanking(theShoe, NewRank);
+             Post post=new Post(user_id,id,ratingD,comment);   
+             PostModel.addPost(post);
+           ///////////////////////////////////////////////////
            
-           preparedStatement.setString(1,brand) ;
-           preparedStatement.setString(2,sColor) ;
-           preparedStatement.setString(3,type) ;
-           preparedStatement.setBlob(4, inputStream);
-           preparedStatement.setString(5, fileName);
-            
-            
-            int affectedRows = preparedStatement.executeUpdate();
-             
-            
-            //////////////////////////////////
-            long id=0;
-            if (affectedRows > 0) {
-                ResultSet generatedKeys = preparedStatement.getGeneratedKeys();
-                if (generatedKeys.next()) {
-                    id = generatedKeys.getLong(1);
-                    
-                }
-            }
-
-            //////////////////////////////////
-            
-            
-            preparedStatement.close();
-            
-            connection.close();
+           
             RequestDispatcher RequetsDispatcherObj =request.getRequestDispatcher("/Views/main.jsp");
             RequetsDispatcherObj.forward(request, response); 
                 
-        }catch (SQLException ex) {
-            request.setAttribute("error", ex.toString());
-            String url = "/Views/error.jsp";
-            getServletContext().getRequestDispatcher(url).forward(request, response);
-        } catch (ClassNotFoundException ex) {
-            request.setAttribute("error", ex.toString());
-            String url = "/Views/error.jsp";
-            getServletContext().getRequestDispatcher(url).forward(request, response);
-        
-        }
+        }catch(Exception ex) {
+            System.out.println(ex);
+        } 
         
     }
     private String extractFileName(Part part) {

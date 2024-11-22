@@ -60,6 +60,14 @@
         <servlet-name>sendShInfo</servlet-name>
         <servlet-class>RReview.sendShInfo</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>ApiMng</servlet-name>
+        <servlet-class>RReview.ApiMng</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>getSearch</servlet-name>
+        <servlet-class>RReview.getSearch</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>Login</servlet-name>
         <url-pattern>/Login</url-pattern>
@@ -119,6 +127,14 @@
     <servlet-mapping>
         <servlet-name>sendShInfo</servlet-name>
         <url-pattern>/sendShInfo</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ApiMng</servlet-name>
+        <url-pattern>/ApiMng</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>getSearch</servlet-name>
+        <url-pattern>/getSearch</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

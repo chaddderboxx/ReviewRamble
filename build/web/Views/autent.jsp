@@ -1,15 +1,10 @@
-<%-- 
-    Document   : autent
-    Created on : Oct 27, 2024, 12:11:40 AM
-    Author     : pedro
---%>
 
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 
 
 <!DOCTYPE html>
-<html>
+<html lang="en">
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="stylesheet" href="main.css" media="screen">
@@ -31,10 +26,10 @@
             <righS>
                 <h1> Login </h1><br><br>
                 <form action="Login" method ="post">
-                    <label >Username</label>
+                    <label class="passwordLabel">Username</label>
                     <input type="text" name="username" required><br>
                     <br>
-                    <label >Password</label>
+                    <label class="passwordLabel" >Password </label>
                     <input type="password" name="password" required><br>
                     <br>
                     <input type="hidden" name="action" value="autent">
@@ -46,7 +41,7 @@
                 <a href="index.html">Back</a>
             </righS>
         </container>        
-        <c:import url="/Views/footer.jsp"/>
+        
     </body>
 
 </html>

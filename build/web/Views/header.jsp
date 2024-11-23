@@ -1,5 +1,5 @@
 <header> 
-    <div class="left">
+            <div class="left">
         <img  src="images/Home.png" alt="h.img">
         <a href="DirectPage?option=Main" >Home</a>
         <img  src="images/person.gif" alt="h.img">

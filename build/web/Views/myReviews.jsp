@@ -11,6 +11,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="stylesheet" href="main.css" media="screen">
         <link rel="stylesheet" type="text/css" href="Footer.css">
+        <link rel="stylesheet" type="text/css" href="header.css">
         <script src="scripts/paintStars.js"></script>
         <title>My Reviews Page</title>
     </head>

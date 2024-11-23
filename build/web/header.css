@@ -1,0 +1,84 @@
+/*
+Created on : Nov 23, 2024 3:00:08
+Author :     Valentina
+*/
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+header {
+    width: 100%;
+    background-color: #156082;
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding: 10px 20px;
+    color: #A6CAEC;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box;
+    z-index: 10;
+}
+
+header .left, header .right {
+    display: flex;
+    align-items: center;
+}
+
+header .left a, header .right a {
+    color: whitesmoke;
+    text-decoration: none;
+    padding: 5px 15px;
+    transition: color 0.3s ease;
+}
+
+header .left img, header .right img {
+    width: 40px;
+    height: auto;
+    margin-right: 10px;
+}
+
+header .center {
+    flex: 1;
+    text-align: center;
+    font-size: 1.5em;
+    color: whitesmoke;
+}
+
+header a:hover {
+    color: blue;
+}
+
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    header .left, header .right {
+        margin-bottom: 10px;
+    }
+
+    header .center {
+        margin-bottom: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    header {
+        padding: 8px 15px;
+    }
+
+    header .left img, header .right img {
+        width: 35px;
+    }
+
+    header .center {
+        font-size: 1.2em;
+    }
+}

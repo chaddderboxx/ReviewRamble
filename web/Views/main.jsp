@@ -67,11 +67,11 @@
                 <h3>Major Players</h3>
                 <img src="images/MajorPlayers.png" alt="Major Players" class="content-image">
                 <ul class="brand-list">
-                    <li><a href="#">Adidas</a></li>
-                    <li><a href="#">Nike</a></li>
-                    <li><a href="#">Puma</a></li>
-                    <li><a href="#">Sketchers</a></li>
-                    <li><a href="#">Kering</a></li>
+                    <li><a href="https://www.adidas.com" target="_blank">Adidas</a></li>
+                    <li><a href="https://www.nike.com" target="_blank">Nike</a></li>
+                    <li><a href="https://www.puma.com" target="_blank">Puma</a></li>
+                    <li><a href="https://www.sketchers.com" target="_blank">Sketchers</a></li>
+                    <li><a href="https://www.kering.com" target="_blank">Kering</a></li>
                 </ul>
                 <a href="#" class="read-more">Read More</a>
             </div>
@@ -81,17 +81,17 @@
                 <h3>Online Stores</h3>
                 <div class="store-columns">
                     <ul class="store-list">
-                        <li><a href="#">Zappos</a></li>
-                        <li><a href="#">Shopbop</a></li>
-                        <li><a href="#">Nordstrom</a></li>
-                        <li><a href="#">DSW</a></li>
-                        <li><a href="#">Footlocker</a></li>
+                        <li><a href="https://www.zappos.com" target="_blank">Zappos</a></li>
+                        <li><a href="https://www.shopbob.com" target="_blank">Shopbop</a></li>
+                        <li><a href="https://www.nordstrom.com" target="_blank">Nordstrom</a></li>
+                        <li><a href="https://www.dsw.com" target="_blank">DSW</a></li>
+                        <li><a href="https://www.footlocker.com" target="_blank">Footlocker</a></li>
                     </ul>
                     <ul class="store-list">
-                        <li><a href="#">Amazon</a></li>
-                        <li><a href="#">Asos</a></li>
-                        <li><a href="#">Road Runner Sports</a></li>
-                        <li><a href="#">StockX</a></li>
+                        <li><a href="https://www.amazon.com" target="_blank">Amazon</a></li>
+                        <li><a href="https://www.asos.com" target="_blank">Asos</a></li>
+                        <li><a href="https://www.roadrunnersports.com" target="_blank">Road Runner Sports</a></li>
+                        <li><a href="https://www.stockx.com" target="_blank">StockX</a></li>
                     </ul>
                 </div>
                 <a href="#" class="read-more">Read More</a>

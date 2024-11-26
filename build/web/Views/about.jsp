@@ -13,7 +13,7 @@
     </head>
     <c:import url="/Views/header.jsp"/>
     <body>
-        <br><br>
+        <br><br><br><br>
         <h1>About</h1>
         <div class="about-container"> 
             <div class=leftS>

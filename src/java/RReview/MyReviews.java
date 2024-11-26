@@ -32,7 +32,7 @@ public class MyReviews extends HttpServlet {
             }
             HttpSession session = request.getSession();
             String username = (String)session.getAttribute("username");
-            User cuser= UserModel.getUser(username);
+            User cuser= UserModel2.getUser(username);
             int user_id=cuser.getId();
             ArrayList<Review> reviews = PostModel.getReviewByUserId(user_id);
             

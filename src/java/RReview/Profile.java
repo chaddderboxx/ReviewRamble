@@ -24,7 +24,7 @@ public class Profile extends HttpServlet {
         
         HttpSession session = request.getSession();
         String username = (String)session.getAttribute("username");
-        User user = UserModel.getUser(username);
+        User user = UserModel2.getUser(username);
         
         request.setAttribute("filename", user.getFilename());
         String url = "/Views/profile.jsp";

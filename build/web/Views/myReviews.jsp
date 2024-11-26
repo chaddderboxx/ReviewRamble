@@ -17,7 +17,7 @@
     </head>
     <c:import url="/Views/header.jsp"/>
     <body>
-        <br><br>
+        <br><br><br><br>
         <h1>My Reviews!</h1>
         <br><!-- comment -->
         <div class="myReviews">

@@ -15,7 +15,7 @@
     </head>
     <c:import url="/Views/header.jsp"/>
     <body>
-        <br><br>
+        <br><br><br><br>
         <h1>Your shoe review!</h1>
         <br>
 

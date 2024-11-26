@@ -18,7 +18,7 @@
     </head>
     <c:import url="/Views/header.jsp"/>
     <body>
-        <br><br>
+        <br><br><br><br>
         <h1>The Shoes!</h1>
         <br><!-- comment -->
         <div class="myReviews">
@@ -27,7 +27,7 @@
                     <li data-rating="${item.getRating()}">
                         <img class="reviewimage" src="${item.getFilename()}" alt="Shoe img">
                         <div class="sku">${item.getBrand()}</div>
-                        <div class="sku">Id:${item.getSku()} </div>
+                        <div class="sku">${item.getsTitle()} </div>
                         <form action="CommByShoe" method="GET">
                             <input type="hidden" name="shoeIdInfo" value="${item.getId()}">
                             <button class="button1"   >Reviews</button>

@@ -30,7 +30,7 @@ public class Login extends HttpServlet {
                         
                         String hashedPass = toHexString(getSHA(pass));
                         
-                        User user = UserModel.getUser(username);
+                        User user = UserModel2.getUser(username);
                         String hashedStoredPass = null;
                         if (user!=null){
                             hashedStoredPass = user.getPassword();
@@ -42,7 +42,7 @@ public class Login extends HttpServlet {
                             HttpSession session = request.getSession();
                             
                             session.setAttribute("username",username);
-                            User user1= UserModel.getUser(username);
+                            User user1= UserModel2.getUser(username);
                             
                             String url = "/Views/main.jsp";
                             getServletContext().getRequestDispatcher(url).forward(request,response); 
@@ -68,7 +68,7 @@ public class Login extends HttpServlet {
                             try{
                                String hashedPassword = toHexString(getSHA(pass1));    
                                User user = new User(0,username,hashedPassword);
-                               UserModel.addUser(user);
+                               UserModel2.addUser(user);
                                response.sendRedirect("index.html");
                             }catch(Exception ex){
                                 exceptionPage(ex, request, response);

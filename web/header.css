@@ -18,7 +18,7 @@ header {
     left: 0;
     right: 0;
     padding: 10px 20px;
-    color: #A6CAEC;
+    
     justify-content: space-between;
     align-items: center;
     box-sizing: border-box;
@@ -47,11 +47,15 @@ header .center {
     flex: 1;
     text-align: center;
     font-size: 1.5em;
-    color: whitesmoke;
+    color: gray;
 }
 
 header a:hover {
     color: blue;
+}
+.userImg {
+    
+    border-radius: 50%;
 }
 
 @media (max-width: 768px) {

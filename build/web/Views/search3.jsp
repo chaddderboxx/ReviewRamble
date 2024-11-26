@@ -26,7 +26,7 @@
             String lookUpStr1 = request.getParameter("lookUpStr");
             if(lookUpStr1==null){lookUpStr1="";}
         %>    
-        <br><br>
+        <br><br><br><br>
         <h1>Search!</h1>
         <form id="searchForm" action="getSearch" method="Post" > 
             <div class="pagination">

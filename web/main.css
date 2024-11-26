@@ -39,9 +39,16 @@ header img {
 .about-container {
     display: flex;
     gap: 20px;
-    width: 100%; /* Adjust as needed */
+    width: 100%;
     margin: 0 auto;
-    padding: 20px;
+    padding: 10px;
+}
+.profile-container {
+    display: flex;
+    gap: 20px;
+    width: 100%;
+    margin: 0 auto;
+    
 }
 leftS {
     float: left;
@@ -253,4 +260,10 @@ Label {
 }
 .passwordLabel {
     width: 80px;
+}
+
+.profileImg {
+    width:240px;
+    height:auto;
+    border-radius: 10px;
 }

@@ -36,7 +36,7 @@ public class Ramble extends HttpServlet {
                 }
                
 
-                ArrayList<User> users = UserModel.getUsers();
+                ArrayList<User> users = UserModel2.getUsers();
                 if (action==null){
                     
                     request.setAttribute("users",users);
@@ -60,7 +60,7 @@ public class Ramble extends HttpServlet {
                         try{
                            String hashedPassword = toHexString(getSHA(pass1));    
                            User user = new User(id,username,hashedPassword);
-                           UserModel.updateUser(user);
+                           UserModel2.updateUser(user);
                            response.sendRedirect("Twitter");
                         }catch(Exception ex){
                             exceptionPage(ex, request, response);
@@ -73,7 +73,7 @@ public class Ramble extends HttpServlet {
                     int id = Integer.parseInt(request.getParameter("id"));
                     try{
                         User user = new User(id,"","");
-                           UserModel.deleteUser(user);
+                           UserModel2.deleteUser(user);
                            response.sendRedirect("Twitter");
                         
                     }catch(Exception ex){

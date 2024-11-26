@@ -1,12 +1,9 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Servlet.java to edit this template
- */
+
 package RReview;
 
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.ArrayList;
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -14,17 +11,20 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-/**
- *
- * @author pedro
- */
-@WebServlet(name = "Top3", urlPatterns = {"/Top3"})
-public class Top3 extends HttpServlet {
+
+@WebServlet(name = "UpdateContact", urlPatterns = {"/UpdateContact"})
+public class UpdateContact extends HttpServlet {
 
     
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
+        
+        String contactName = request.getParameter("contactName");
+        String contactEmail= request.getParameter("contactEmail");
+        String contactMessage= request.getParameter("contactMessage");
+        
+        
         try {
             if (!Login.ensureUserIsLoggedIn(request)) {
                 request.setAttribute("message", "You must login");
@@ -35,14 +35,13 @@ public class Top3 extends HttpServlet {
             String username = (String)session.getAttribute("username");
             User cuser= UserModel2.getUser(username);
             int user_id=cuser.getId();
-            ArrayList<Shoe> shoes = ShoeModel.getShoe();
-            
-            request.setAttribute("shoes",shoes);
-            String url = "/Views/Top3.jsp";  
-            getServletContext().getRequestDispatcher(url).forward(request,response);
-        }catch(Exception ex){
-            exceptionPage(ex, request, response);
-        }
+            Contact contact = new Contact(user_id,contactName,contactEmail,contactMessage);
+            ContactModel.addContact(contact);
+            RequestDispatcher RequetsDispatcherObj =request.getRequestDispatcher("/Views/main.jsp");
+            RequetsDispatcherObj.forward(request, response);
+        }catch(Exception ex) {
+            System.out.println(ex);
+        } 
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
@@ -83,10 +82,5 @@ public class Top3 extends HttpServlet {
     public String getServletInfo() {
         return "Short description";
     }// </editor-fold>
-private void exceptionPage(Exception ex, HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String error = ex.toString();
-        request.setAttribute("error", error);
-        String url = "/Views/error.jsp";
-        getServletContext().getRequestDispatcher(url).forward(request,response);
-    }
+
 }

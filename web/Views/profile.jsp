@@ -11,23 +11,34 @@
     </head>
     <c:import url="/Views/header.jsp"/>
     <body>
-        <br><br>
-        <h2>Welcome ${username}!</h2><br>
         
-        <c:if test="${(filename != null)}">
-            <img src="GetImage?username=${username}" width="240" height="300"/>
-        </c:if>
-        <h3>upload a profile picture!</h3>
-        <form action="Upload" method="post" enctype="multipart/form-data">
-            <div id="data">
-                <input type="file" accept="image/*" name="file">
+        <div class="profile-container">
+            <div class="leftS">
+                <img src="images/GroupIcon.jpg" class="logo" alt="RambleLogo"/>
             </div>
-            <div id="buttons">
-                <label>&nbsp;</label>
-                <input type="submit" value="Upload"><br>
+            <div class="righS">
+                
+                <h2>Welcome ${username}!</h2><br>
+
+                <c:if test="${(filename != null)}">
+                    <img class="profileImg" src="GetImage?username=${username}" alt="UserImg" />
+                </c:if>
+                <h3>Upload a profile picture!</h3>
+                <form action="Upload" method="post" enctype="multipart/form-data">
+                    <div id="data">
+                        <input type="file" accept="image/*" name="file">
+                    </div>
+                    <div id="buttons">
+                        
+                        <input type="submit" value="Upload"><br>
+                    </div>
+                </form>
+                <br>
+                <a href="DirectPage?option=Main">Home</a><br>
             </div>
-        </form>
-        <a href="DirectPage?option=Main">Back</a><br>
-        <c:import url="/Views/footer.jsp"/>
+        </div>
+        
+
     </body>
+    <c:import url="/Views/footer.jsp"/>
 </html>

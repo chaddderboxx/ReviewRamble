@@ -53,7 +53,7 @@ public class UploadShoe extends HttpServlet {
         try{
             HttpSession session = request.getSession();
             String username = (String)session.getAttribute("username");
-            User cuser= UserModel.getUser(username);
+            User cuser= UserModel2.getUser(username);
             int user_id=cuser.getId();
             int shoeId= ShoeModel.getShoeIdBySku(sku);
             QRResult qrresult = ShoeModel.getRatSumAndQtyById(shoeId);

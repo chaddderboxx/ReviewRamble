@@ -20,7 +20,7 @@
                 <img src="images/GroupIcon.jpg" class="logo" alt="RambleLogo"/>
             </div>
             <div class="righS">
-                <form action="Contact" method ="post">
+                <form action="UpdateContact" method ="post">
                     <h1>Contact!</h1>
                     <!--VC Changed to place holder so the labels appear inside the input boxes-->
                     <input type="text" name="contactName" placeholder="Name: " required><br>
